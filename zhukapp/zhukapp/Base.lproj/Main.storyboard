@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dE5-WD-qS5">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,7 +14,7 @@
             <objects>
                 <navigationController id="dE5-WD-qS5" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9bi-A0-0fW">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -34,17 +34,17 @@
                         <viewControllerLayoutGuide type="bottom" id="tKg-la-mYT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="arc-lJ-AlE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yVb-8E-NCE">
-                                <rect key="frame" x="139" y="236" width="141" height="30"/>
+                                <rect key="frame" x="139" y="236" width="180" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qSl-5o-pn6">
-                                <rect key="frame" x="139" y="291" width="141" height="30"/>
+                                <rect key="frame" x="139" y="291" width="180" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -60,7 +60,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cap-r2-ntg">
-                                <rect key="frame" x="139" y="329" width="141" height="30"/>
+                                <rect key="frame" x="139" y="329" width="180" height="30"/>
                                 <state key="normal" title="Sing in"/>
                                 <connections>
                                     <action selector="singIn:" destination="5R9-7M-pua" eventType="touchUpInside" id="eb4-bw-vh2"/>
@@ -105,20 +105,20 @@
                         <viewControllerLayoutGuide type="bottom" id="bXe-Qe-ZyQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3wS-Hv-EJz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sww-sh-2bS">
-                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="200" height="716"/>
                                 <color key="backgroundColor" red="0.20480912923812866" green="0.61667484045028687" blue="0.97756344079971313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" id="yXV-15-eFS"/>
+                                    <constraint firstAttribute="width" constant="200" id="yXV-15-eFS"/>
                                 </constraints>
                             </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zmy-pM-Zng">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="jOD-1h-YUU">
+                                    <navigationItem title="Menu" id="jOD-1h-YUU">
                                         <barButtonItem key="leftBarButtonItem" systemItem="organize" id="W0E-si-adO">
                                             <connections>
                                                 <action selector="openMenu:" destination="cGa-Lp-PZU" id="bgt-nc-Bgq"/>
@@ -127,24 +127,43 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2YZ-9s-LFW">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2C6-Zt-8J4">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2C6-Zt-8J4" id="syB-hw-EZk">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2YZ-9s-LFW" firstAttribute="leading" secondItem="3wS-Hv-EJz" secondAttribute="leading" id="1cQ-K6-Ygc"/>
                             <constraint firstItem="sww-sh-2bS" firstAttribute="top" secondItem="Zmy-pM-Zng" secondAttribute="top" id="2zq-N7-3vj"/>
                             <constraint firstItem="sww-sh-2bS" firstAttribute="leading" secondItem="3wS-Hv-EJz" secondAttribute="leading" id="EBf-R3-xuI"/>
                             <constraint firstAttribute="trailing" secondItem="Zmy-pM-Zng" secondAttribute="trailing" id="OwW-av-Ph5"/>
+                            <constraint firstAttribute="trailing" secondItem="2YZ-9s-LFW" secondAttribute="trailing" id="V1r-6N-JNd"/>
                             <constraint firstItem="Zmy-pM-Zng" firstAttribute="leading" secondItem="3wS-Hv-EJz" secondAttribute="leading" id="Wds-8J-A1B"/>
                             <constraint firstItem="bXe-Qe-ZyQ" firstAttribute="top" secondItem="sww-sh-2bS" secondAttribute="bottom" id="iT6-SW-V32"/>
-                            <constraint firstItem="Zmy-pM-Zng" firstAttribute="top" secondItem="3wS-Hv-EJz" secondAttribute="top" id="t1l-Nc-L1C"/>
+                            <constraint firstItem="bXe-Qe-ZyQ" firstAttribute="top" secondItem="2YZ-9s-LFW" secondAttribute="bottom" id="pMZ-XH-7ZS"/>
+                            <constraint firstItem="2YZ-9s-LFW" firstAttribute="top" secondItem="Zmy-pM-Zng" secondAttribute="bottom" id="pYr-Yr-6QI"/>
+                            <constraint firstItem="Zmy-pM-Zng" firstAttribute="top" secondItem="3wS-Hv-EJz" secondAttribute="top" constant="20" id="t1l-Nc-L1C"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="menuconst" destination="yXV-15-eFS" id="Jmk-cA-7XW"/>
+                        <outlet property="tabbarconst" destination="t1l-Nc-L1C" id="9Rh-y9-1il"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2u-V9-QTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1208.8" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1208.6956521739132" y="138.58695652173915"/>
         </scene>
     </scenes>
 </document>

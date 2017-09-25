@@ -10,6 +10,7 @@ import UIKit
 
 class ViewControllerTable: UIViewController {
 
+    @IBOutlet weak var tabbarconst: NSLayoutConstraint!
     @IBOutlet weak var menuconst: NSLayoutConstraint!
     
     var menuSwowing =  false
