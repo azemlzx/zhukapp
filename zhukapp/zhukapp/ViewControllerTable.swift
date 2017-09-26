@@ -10,8 +10,10 @@ import UIKit
 
 class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewDataSource  {
     
+    @IBOutlet weak var tableViewFirst: UITableView!
     @IBOutlet weak var menuconst: NSLayoutConstraint!
     @IBOutlet weak var menuView: UIView!
+    @IBOutlet weak var tableViewMenu: UITableView!
     
     var menuSwowing =  false
     
@@ -27,7 +29,7 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

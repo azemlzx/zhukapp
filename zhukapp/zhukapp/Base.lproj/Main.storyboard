@@ -142,7 +142,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="672"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="59" id="tBI-qf-lJA" customClass="TableViewCell" customModule="zhukapp" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellMenu" rowHeight="59" id="tBI-qf-lJA" customClass="TableViewCell" customModule="zhukapp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="200" height="59"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tBI-qf-lJA" id="PDy-m8-alZ">
@@ -184,6 +184,8 @@
                     <connections>
                         <outlet property="menuView" destination="On2-bA-d5W" id="wfd-TZ-Qe2"/>
                         <outlet property="menuconst" destination="YNg-y8-vTf" id="9B6-zC-2PJ"/>
+                        <outlet property="tableViewFirst" destination="ogw-SM-nLI" id="L6D-cZ-C9g"/>
+                        <outlet property="tableViewMenu" destination="eLk-Fq-3hu" id="F9C-PO-HGx"/>
                     </connections>
                 </viewController>
             </objects>
