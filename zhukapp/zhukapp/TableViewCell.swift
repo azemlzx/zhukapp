@@ -12,6 +12,5 @@ class TableViewCell: UITableViewCell {
 
     @IBOutlet weak var tabname: UILabel!
     @IBOutlet weak var tabs: UILabel!
-    
 
 }
