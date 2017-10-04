@@ -99,7 +99,6 @@
         <!--View Controller Table-->
         <scene sceneID="efO-kU-VU4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F2u-V9-QTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="tableVC" id="cGa-Lp-PZU" customClass="ViewControllerTable" customModule="zhukapp" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FKZ-FV-6Iy"/>
@@ -135,20 +134,37 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="On2-bA-d5W">
-                                <rect key="frame" x="0.0" y="64" width="200" height="672"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="On2-bA-d5W">
+                                <rect key="frame" x="0.0" y="64" width="0.0" height="672"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eLk-Fq-3hu">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="672"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eLk-Fq-3hu">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="672"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellMenu" rowHeight="59" id="tBI-qf-lJA" customClass="TableViewCell" customModule="zhukapp" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellMenu" rowHeight="59" id="tBI-qf-lJA" customClass="MenuCell" customModule="zhukapp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="200" height="59"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tBI-qf-lJA" id="PDy-m8-alZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="58.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoE-lz-elA">
+                                                            <rect key="frame" x="8" y="8" width="192" height="43"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                 </tableViewCellContentView>
+                                                <constraints>
+                                                    <constraint firstItem="eoE-lz-elA" firstAttribute="top" secondItem="tBI-qf-lJA" secondAttribute="top" constant="8" id="16T-qs-sot"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eoE-lz-elA" secondAttribute="trailing" id="KCP-U8-WOr"/>
+                                                    <constraint firstAttribute="bottom" secondItem="eoE-lz-elA" secondAttribute="bottom" constant="8" id="VF9-e2-ZbF"/>
+                                                    <constraint firstItem="eoE-lz-elA" firstAttribute="leading" secondItem="tBI-qf-lJA" secondAttribute="leading" constant="8" id="eR7-7L-4cf"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="tabnameMenuCell" destination="eoE-lz-elA" id="TdU-So-kuX"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
@@ -188,6 +204,7 @@
                         <outlet property="tableViewMenu" destination="eLk-Fq-3hu" id="F9C-PO-HGx"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F2u-V9-QTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1208.6956521739132" y="138.58695652173915"/>
         </scene>

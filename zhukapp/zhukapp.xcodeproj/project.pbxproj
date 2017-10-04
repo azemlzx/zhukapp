@@ -12,6 +12,7 @@
 		FF02741F1F6D26F8002F86AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF02741D1F6D26F8002F86AC /* Main.storyboard */; };
 		FF0274211F6D26F8002F86AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF0274201F6D26F8002F86AC /* Assets.xcassets */; };
 		FF0274241F6D26F8002F86AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0274221F6D26F8002F86AC /* LaunchScreen.storyboard */; };
+		FF2B5FD01F857AAF0094E680 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2B5FCF1F857AAF0094E680 /* MenuCell.swift */; };
 		FF74C4E21F797F5A0017CB07 /* ViewControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF74C4E11F797F5A0017CB07 /* ViewControllerTable.swift */; };
 		FF74C4E41F79821F0017CB07 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF74C4E31F79821F0017CB07 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 		FF0274201F6D26F8002F86AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF0274231F6D26F8002F86AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF0274251F6D26F8002F86AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF2B5FCF1F857AAF0094E680 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		FF74C4E11F797F5A0017CB07 /* ViewControllerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTable.swift; sourceTree = "<group>"; };
 		FF74C4E31F79821F0017CB07 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +68,7 @@
 				FF0274251F6D26F8002F86AC /* Info.plist */,
 				FF74C4E11F797F5A0017CB07 /* ViewControllerTable.swift */,
 				FF74C4E31F79821F0017CB07 /* TableViewCell.swift */,
+				FF2B5FCF1F857AAF0094E680 /* MenuCell.swift */,
 			);
 			path = zhukapp;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF74C4E21F797F5A0017CB07 /* ViewControllerTable.swift in Sources */,
+				FF2B5FD01F857AAF0094E680 /* MenuCell.swift in Sources */,
 				FF74C4E41F79821F0017CB07 /* TableViewCell.swift in Sources */,
 				FF02741C1F6D26F8002F86AC /* ViewController.swift in Sources */,
 				FF02741A1F6D26F8002F86AC /* AppDelegate.swift in Sources */,
