@@ -10,7 +10,8 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
-    @IBOutlet weak var tabname: UILabel!
-    @IBOutlet weak var tabs: UILabel!
+    @IBOutlet weak var toplabel: UILabel!
+    @IBOutlet weak var textlabel: UILabel!
+    @IBOutlet weak var bottomlabel: UILabel!
 
 }

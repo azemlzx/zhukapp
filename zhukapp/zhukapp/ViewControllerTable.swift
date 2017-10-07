@@ -14,17 +14,22 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
     @IBOutlet weak var menuconst: NSLayoutConstraint!
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var tableViewMenu: UITableView!
-    
+   
+
     var menuSwowing =  false
+    var indexmenu :Int? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableViewMenu.dataSource = self
-        self.tableViewMenu.delegate = self
+        tableViewMenu.dataSource = self
+        tableViewMenu.delegate = self
         
-        self.tableViewFirst.dataSource = self
-        self.tableViewFirst.delegate = self
+        tableViewFirst.dataSource = self
+        tableViewFirst.delegate = self
+        
+        tableViewMenu.estimatedRowHeight = 60
+        tableViewMenu.rowHeight = UITableViewAutomaticDimension
         
         menuView.layer.shadowOpacity = 1
         menuView.layer.shadowRadius = 6
@@ -41,7 +46,12 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         var countS : Int = 0
         
         if (tableView == tableViewFirst){
-            countS = 10
+            if indexmenu == nil{
+                countS = 0
+            }else{
+                countS = indexmenu! + 1
+            }
+            
         }else if (tableView == tableViewMenu){
             countS = 3
         }
@@ -54,6 +64,15 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? TableViewCell else {
                 return UITableViewCell()
             }
+            if indexmenu == nil{
+                return UITableViewCell()
+            }
+            cell.bottomlabel.text = "Подвал"
+            cell.textlabel.text = "Текст"
+            cell.toplabel.text = "Шапка"
+            
+            return cell
+            
         }else if (tableView == tableViewMenu){
             guard let cellMenu = tableView.dequeueReusableCell(withIdentifier: "CellMenu") as? MenuCell else {
                 return UITableViewCell()
@@ -65,18 +84,30 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
             default:
                cellMenu.tabnameMenuCell.text =  ""
             }
+            cellMenu.layer.borderWidth = 1.0
+            cellMenu.layer.borderColor = UIColor.gray.cgColor
             return cellMenu
             
         }
         return UITableViewCell()
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (tableView == tableViewFirst){
+           tableViewFirst.deselectRow(at: indexPath, animated:true)
+        }else if (tableView == tableViewMenu){
+            openMenu("")
+            indexmenu = indexPath.row
+            tableViewMenu.deselectRow(at: indexPath, animated: true)
+            tableViewFirst.reloadData()
+        }
+        
+    }
     
     @IBAction func openMenu(_ sender: Any) {
         if (menuSwowing){
             menuconst.constant = 0
         }else{
-            menuconst.constant = 175
+            menuconst.constant = 200
         }
         menuSwowing = !menuSwowing
         
