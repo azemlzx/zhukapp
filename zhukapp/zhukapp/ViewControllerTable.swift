@@ -2,21 +2,21 @@
 //  ViewControllerTable.swift
 //  zhukapp
 //
-//  Created by Alexander Zemlyansky on 25.09.17.
+//  Created by Alexander Zemlyansky on 08.10.17.
 //  Copyright © 2017 Alexander Zemlyansky. All rights reserved.
 //
 
 import UIKit
 
 class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewDataSource  {
-    
+
     @IBOutlet weak var menubar: UINavigationItem!
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var tableViewFirst: UITableView!
     @IBOutlet weak var menuconst: NSLayoutConstraint!
     @IBOutlet weak var tableViewMenu: UITableView!
-   
-
+    
+    
     var menuSwowing =  false
     var indexmenu :Int = 0
     
@@ -37,7 +37,7 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         tableViewMenu.tableFooterView = UIView(frame: CGRect.zero)
         self.menubar.title = casestr(indextab: indexmenu)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -48,7 +48,7 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         var countS : Int = 0
         
         if (tableView == tableViewFirst){
-                countS = indexmenu + 1
+            countS = indexmenu + 1
         }else if (tableView == tableViewMenu){
             countS = 3
         }
@@ -75,7 +75,7 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
                 
                 cell.toplabelAc.text = "Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка"
                 cell.textlabelAc.text = "Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст"
-
+                
                 return cell
             }
             
@@ -93,12 +93,12 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (tableView == tableViewFirst){
-           if (menuSwowing){
-              openMenu("")
-           }
-           tableViewFirst.deselectRow(at: indexPath, animated:true)
-           self.title = casestr(indextab: indexmenu)
-           self.menubar.title = casestr(indextab: indexmenu)
+            if (menuSwowing){
+                openMenu("")
+            }
+            tableViewFirst.deselectRow(at: indexPath, animated:true)
+            self.title = casestr(indextab: indexmenu)
+            self.menubar.title = casestr(indextab: indexmenu)
         }else if (tableView == tableViewMenu){
             openMenu("")
             indexmenu = indexPath.row
@@ -108,7 +108,7 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         }
     }
     
-   
+    
     @IBAction func Acceptfunc(_ sender: Any) {
         let alertError = UIAlertController(title: "All", message:  "Acceptfunk", preferredStyle: UIAlertControllerStyle.alert)
         alertError.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
@@ -136,4 +136,5 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
             self.view.layoutIfNeeded()
         })
     }
+
 }

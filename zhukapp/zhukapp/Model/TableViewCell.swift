@@ -2,7 +2,7 @@
 //  TableViewCell.swift
 //  zhukapp
 //
-//  Created by Alexander Zemlyansky on 25.09.17.
+//  Created by Alexander Zemlyansky on 08.10.17.
 //  Copyright © 2017 Alexander Zemlyansky. All rights reserved.
 //
 
