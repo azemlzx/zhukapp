@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Coordination" representedClassName="Coordination" syncable="YES" codeGenerationType="class">
-        <attribute name="statusC" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="statusC" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="sum" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="textC" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="titleC" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Order" representedClassName="Order" syncable="YES" codeGenerationType="class">
         <attribute name="statusO" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="sum" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="textO" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="titleO" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="titleO" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Selling" representedClassName="Selling" syncable="YES" codeGenerationType="class">
         <attribute name="nameSalling" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sum" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Coordination" positionX="-36" positionY="36" width="128" height="105"/>
+        <element name="Order" positionX="-54" positionY="9" width="128" height="105"/>
         <element name="Selling" positionX="-63" positionY="-18" width="128" height="75"/>
-        <element name="Order" positionX="-54" positionY="9" width="128" height="90"/>
-        <element name="Coordination" positionX="-36" positionY="36" width="128" height="90"/>
     </elements>
 </model>

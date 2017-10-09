@@ -47,8 +47,12 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         
         var countS : Int = 0
         
-        if (tableView == tableViewFirst){
-            countS = indexmenu + 1
+        if (tableView == tableViewFirst && indexmenu == 0){
+            countS = 0
+        }else if(tableView == tableViewFirst && indexmenu == 1){
+            countS = 1
+        }else if(tableView == tableViewFirst && indexmenu == 2){
+            countS = 2
         }else if (tableView == tableViewMenu){
             countS = 3
         }
@@ -57,8 +61,8 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if (tableView == tableViewFirst){
-            if ((indexPath.row % 2) == 0){
+        if (tableView == tableViewFirst && indexmenu == 0){
+//            if (indexmenu == 1){
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? TableViewCell else {
                     return UITableViewCell()
                 }
@@ -68,16 +72,21 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
                 cell.bottomlabel.text = "Подвал Подвал Подвал Подвал Подвал Подвал Подвал Подвал Подвал Подвал Подвал Подвал"
                 cell.bottomlabel.textColor = #colorLiteral(red: 1, green: 0.1862298954, blue: 0.2883357974, alpha: 1)
                 return cell
-            }else{
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellAccept") as? AcceptCell else {
-                    return UITableViewCell()
-                }
-                
-                cell.toplabelAc.text = "Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка"
-                cell.textlabelAc.text = "Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст"
-                
-                return cell
-            }
+//            }else{
+//                guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellAccept") as? AcceptCell else {
+//                    return UITableViewCell()
+//                }
+//
+//                cell.toplabelAc.text = "Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка"
+//                cell.textlabelAc.text = "Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст"
+//
+//                return cell
+//            }
+        }else if (tableView == tableViewFirst && indexmenu == 1){
+            
+            
+            
+            
             
         }else if (tableView == tableViewMenu){
             guard let cellMenu = tableView.dequeueReusableCell(withIdentifier: "CellMenu") as? MenuCell else {
@@ -122,6 +131,13 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
     }
     
     
+    @IBAction func AddSel(_ sender: Any) {
+        let Storybord = UIStoryboard(name: "Main", bundle: nil)
+        let myVCTouch = Storybord.instantiateViewController(withIdentifier: "addVC") as! ViewControllerAdd
+        myVCTouch.indexmenu = indexmenu
+        self.present(myVCTouch, animated: true, completion:nil)
+        
+    }
     
     
     @IBAction func openMenu(_ sender: Any) {

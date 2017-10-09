@@ -18,6 +18,7 @@
 		FF0383251F8A4EBC00A21E7D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0383241F8A4EBC00A21E7D /* TableViewCell.swift */; };
 		FF0383271F8A4EE200A21E7D /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0383261F8A4EE200A21E7D /* MenuCell.swift */; };
 		FF0383291F8A504C00A21E7D /* ViewControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0383281F8A504C00A21E7D /* ViewControllerTable.swift */; };
+		FF9BCFD21F8BFFC0005EDB92 /* ViewControllerAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		FF0383241F8A4EBC00A21E7D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		FF0383261F8A4EE200A21E7D /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		FF0383281F8A504C00A21E7D /* ViewControllerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTable.swift; sourceTree = "<group>"; };
+		FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAdd.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				FF0383191F8A4CA900A21E7D /* Info.plist */,
 				FF0383111F8A4CA900A21E7D /* zhukapp.xcdatamodeld */,
 				FF0383281F8A504C00A21E7D /* ViewControllerTable.swift */,
+				FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */,
 				FF03831F1F8A4DEC00A21E7D /* GeneralFunctions.swift */,
 			);
 			path = zhukapp;
@@ -169,6 +172,7 @@
 				FF03830D1F8A4CA900A21E7D /* ViewController.swift in Sources */,
 				FF0383251F8A4EBC00A21E7D /* TableViewCell.swift in Sources */,
 				FF03830B1F8A4CA900A21E7D /* AppDelegate.swift in Sources */,
+				FF9BCFD21F8BFFC0005EDB92 /* ViewControllerAdd.swift in Sources */,
 				FF0383131F8A4CA900A21E7D /* zhukapp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
