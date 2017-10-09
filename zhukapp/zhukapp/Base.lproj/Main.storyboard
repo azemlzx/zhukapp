@@ -50,6 +50,7 @@
                                                 <action selector="openMenu:" destination="0yn-Mg-rqp" id="Lw4-LJ-MDt"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="oTG-d7-I4L"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -244,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLR-01-F9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1543" y="100"/>
+            <point key="canvasLocation" x="1274" y="99"/>
         </scene>
         <!--Zhuk admin-->
         <scene sceneID="k5b-EM-3lV">
@@ -259,19 +260,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vVI-SP-d6Y">
-                                <rect key="frame" x="139" y="256" width="141" height="30"/>
+                                <rect key="frame" x="139" y="236" width="141" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aKQ-f7-iVy">
-                                <rect key="frame" x="139" y="311" width="141" height="30"/>
+                                <rect key="frame" x="139" y="291" width="141" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ted-Fy-49Y">
-                                <rect key="frame" x="16" y="261" width="93" height="21"/>
+                                <rect key="frame" x="16" y="241" width="93" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="93" id="M5N-RI-WqK"/>
                                     <constraint firstAttribute="height" constant="21" id="WbU-Vg-wZ8"/>
@@ -281,14 +282,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJE-B3-2Ez">
-                                <rect key="frame" x="139" y="349" width="141" height="30"/>
+                                <rect key="frame" x="139" y="329" width="141" height="30"/>
                                 <state key="normal" title="Sing in"/>
                                 <connections>
                                     <action selector="singIn:" destination="jcY-m4-4VG" eventType="touchUpInside" id="Oqj-DP-86K"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IyS-BJ-dDL">
-                                <rect key="frame" x="35" y="314" width="74" height="21"/>
+                                <rect key="frame" x="35" y="294" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -316,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmQ-M0-FUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="634" y="99"/>
+            <point key="canvasLocation" x="535" y="99"/>
         </scene>
     </scenes>
 </document>

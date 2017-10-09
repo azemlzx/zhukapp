@@ -66,7 +66,7 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
                 cell.toplabel.text = "Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка"
                 cell.textlabel.text = "Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст"
                 cell.bottomlabel.text = "Подвал Подвал Подвал Подвал Подвал Подвал Подвал Подвал Подвал Подвал Подвал Подвал"
-                
+                cell.bottomlabel.textColor = #colorLiteral(red: 1, green: 0.1862298954, blue: 0.2883357974, alpha: 1)
                 return cell
             }else{
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellAccept") as? AcceptCell else {

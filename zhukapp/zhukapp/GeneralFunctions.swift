@@ -19,3 +19,14 @@ func casestr(indextab: Int ) -> String{
     }
     return strreturn
 }
+
+func casesell(value: sell){
+    
+}
+
+
+enum sell{
+    case none
+    case accept
+    case reject
+}
