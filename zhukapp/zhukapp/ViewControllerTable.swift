@@ -53,12 +53,30 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
-        let fetchRequest: NSFetchRequest<Selling> = Selling.fetchRequest()
-        
-        do {
-            ItemsSelling = try context.fetch(fetchRequest)
-        } catch {
-            print(error.localizedDescription)
+        if (indexmenu == 0){
+            let fetchRequest: NSFetchRequest<Selling> = Selling.fetchRequest()
+            
+            do {
+                ItemsSelling = try context.fetch(fetchRequest)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }else if (indexmenu == 1){
+            let fetchRequest: NSFetchRequest<Order> = Order.fetchRequest()
+            
+            do {
+                ItemsOrder = try context.fetch(fetchRequest)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }else if (indexmenu == 2){
+            let fetchRequest: NSFetchRequest<Coordination> = Coordination.fetchRequest()
+            
+            do {
+                ItemsCoordination = try context.fetch(fetchRequest)
+            } catch {
+                print(error.localizedDescription)
+            }
         }
         self.tableViewFirst.reloadData()
     }
@@ -133,6 +151,7 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         let Storybord = UIStoryboard(name: "Main", bundle: nil)
         let myVCTouch = Storybord.instantiateViewController(withIdentifier: "addVC") as! ViewControllerAdd
         myVCTouch.indexmenu = indexmenu
+        myVCTouch.delegate = self
         self.present(myVCTouch, animated: true, completion:nil)
         
     }
@@ -152,6 +171,7 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
     }
 
     func relodeTableView() {
-        self.tableViewFirst.reloadData()
+        print("1")
+        //self.tableViewFirst.reloadData()
     }
 }

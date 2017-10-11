@@ -44,3 +44,27 @@ func cellSelling(indexM: Int,tableView: UITableView)-> UITableViewCell{
     return cell
     
 }
+
+func cellOrder(indexM: Int,tableView: UITableView)-> UITableViewCell{
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? TableViewCell else {
+        return UITableViewCell()
+    }
+    var ItemsSelling: [Selling] = []
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let context = appDelegate.persistentContainer.viewContext
+    
+    let fetchRequest: NSFetchRequest<Selling> = Selling.fetchRequest()
+    
+    do {
+        ItemsSelling = try context.fetch(fetchRequest)
+    } catch {
+        print(error.localizedDescription)
+    }
+    cell.toplabel.text = ItemsSelling[indexM].title
+    cell.textlabel.text = ItemsSelling[indexM].textstr
+    cell.bottomlabel.text = "\(ItemsSelling[indexM].sum)"
+    
+    return cell
+    
+}
