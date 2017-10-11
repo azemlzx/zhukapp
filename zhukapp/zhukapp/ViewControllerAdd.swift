@@ -14,10 +14,13 @@ class ViewControllerAdd: UIViewController {
     @IBOutlet weak var Shap: UITextField!
     @IBOutlet weak var sumVC: UITextField!
     @IBOutlet weak var textVC: UITextField!
+    var delegate : DataTableView?
     
     var indexmenu :Int = 0
-    var ItemsOrder: [Order] = []
-    var ItemsCoordination: [Coordination] = []
+    
+    var ItemsSelling: [Selling] = []            // Продажи 0
+    var ItemsOrder: [Order] = []                // Заявки  1
+    var ItemsCoordination: [Coordination] = []  // Согласования продаж 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +36,27 @@ class ViewControllerAdd: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
-        if (indexmenu == 1){
+        if(indexmenu == 0){
+            let entity = NSEntityDescription.entity(forEntityName: "Selling", in: context)
+            let SellingObject = NSManagedObject(entity: entity!, insertInto: context) as! Selling
+            
+            SellingObject.sum = 0
+            SellingObject.textstr = textVC.text!
+            SellingObject.title = Shap.text!
+            
+            do {
+                try context.save()
+                ItemsSelling.append(SellingObject)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }else if (indexmenu == 1){
         
             let entity = NSEntityDescription.entity(forEntityName: "Order", in: context)
             let OrderObject = NSManagedObject(entity: entity!, insertInto: context) as! Order
-            OrderObject.statusO = 0
-            OrderObject.textO = textVC.text!
-            OrderObject.titleO = Shap.text!
+            OrderObject.status = 0
+            OrderObject.textstr = textVC.text!
+            OrderObject.title = Shap.text!
             OrderObject.sum = Float(sumVC.text!)!
             
             do {
@@ -52,9 +69,9 @@ class ViewControllerAdd: UIViewController {
         }else if (indexmenu == 2){
             let entity = NSEntityDescription.entity(forEntityName: "Coordination", in: context)
             let CoordinationObject = NSManagedObject(entity: entity!, insertInto: context) as! Coordination
-            CoordinationObject.statusC = 0
-            CoordinationObject.textC = textVC.text!
-            CoordinationObject.titleC = Shap.text!
+            CoordinationObject.status = 0
+            CoordinationObject.textstr = textVC.text!
+            CoordinationObject.title = Shap.text!
             CoordinationObject.sum = Float(sumVC.text!)!
             
             do {
@@ -66,7 +83,7 @@ class ViewControllerAdd: UIViewController {
             }
             
         }
-        
+        delegate?.relodeTableView()
         self.dismiss(animated: true, completion: nil)
     }
     

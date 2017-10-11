@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewDataSource  {
+class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewDataSource , DataTableView {
 
     @IBOutlet weak var menubar: UINavigationItem!
     @IBOutlet weak var menuView: UIView!
@@ -19,6 +20,11 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
     
     var menuSwowing =  false
     var indexmenu :Int = 0
+    
+    var ItemsSelling: [Selling] = []            // Продажи 0
+    var ItemsOrder: [Order] = []                // Заявки  1
+    var ItemsCoordination: [Coordination] = []  // Согласования продаж 2
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,17 +48,32 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         super.didReceiveMemoryWarning()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest: NSFetchRequest<Selling> = Selling.fetchRequest()
+        
+        do {
+            ItemsSelling = try context.fetch(fetchRequest)
+        } catch {
+            print(error.localizedDescription)
+        }
+        self.tableViewFirst.reloadData()
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         var countS : Int = 0
         
         if (tableView == tableViewFirst && indexmenu == 0){
-            countS = 0
+            countS = ItemsSelling.count
         }else if(tableView == tableViewFirst && indexmenu == 1){
-            countS = 1
+            countS = ItemsOrder.count
         }else if(tableView == tableViewFirst && indexmenu == 2){
-            countS = 2
+            countS = ItemsCoordination.count
         }else if (tableView == tableViewMenu){
             countS = 3
         }
@@ -61,33 +82,8 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if (tableView == tableViewFirst && indexmenu == 0){
-//            if (indexmenu == 1){
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? TableViewCell else {
-                    return UITableViewCell()
-                }
-                
-                cell.toplabel.text = "Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка"
-                cell.textlabel.text = "Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст"
-                cell.bottomlabel.text = "Подвал Подвал Подвал Подвал Подвал Подвал Подвал Подвал Подвал Подвал Подвал Подвал"
-                cell.bottomlabel.textColor = #colorLiteral(red: 1, green: 0.1862298954, blue: 0.2883357974, alpha: 1)
-                return cell
-//            }else{
-//                guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellAccept") as? AcceptCell else {
-//                    return UITableViewCell()
-//                }
-//
-//                cell.toplabelAc.text = "Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка Шапка"
-//                cell.textlabelAc.text = "Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст"
-//
-//                return cell
-//            }
-        }else if (tableView == tableViewFirst && indexmenu == 1){
-            
-            
-            
-            
-            
+        if (tableView == tableViewFirst){
+           return navigator(indexM : indexmenu,tableView: tableView)
         }else if (tableView == tableViewMenu){
             guard let cellMenu = tableView.dequeueReusableCell(withIdentifier: "CellMenu") as? MenuCell else {
                 return UITableViewCell()
@@ -96,10 +92,12 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
             cellMenu.layer.borderWidth = 1.0
             cellMenu.layer.borderColor = UIColor.gray.cgColor
             return cellMenu
-            
         }
         return UITableViewCell()
     }
+    
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (tableView == tableViewFirst){
             if (menuSwowing){
@@ -153,4 +151,7 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         })
     }
 
+    func relodeTableView() {
+        self.tableViewFirst.reloadData()
+    }
 }

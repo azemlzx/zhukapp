@@ -19,6 +19,8 @@
 		FF0383271F8A4EE200A21E7D /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0383261F8A4EE200A21E7D /* MenuCell.swift */; };
 		FF0383291F8A504C00A21E7D /* ViewControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0383281F8A504C00A21E7D /* ViewControllerTable.swift */; };
 		FF9BCFD21F8BFFC0005EDB92 /* ViewControllerAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */; };
+		FFE4E4621F8EB649004DA79D /* cellFille.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4E4611F8EB649004DA79D /* cellFille.swift */; };
+		FFE4E4661F8EC5C0004DA79D /* protocolapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4E4651F8EC5C0004DA79D /* protocolapp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		FF0383261F8A4EE200A21E7D /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		FF0383281F8A504C00A21E7D /* ViewControllerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTable.swift; sourceTree = "<group>"; };
 		FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAdd.swift; sourceTree = "<group>"; };
+		FFE4E4611F8EB649004DA79D /* cellFille.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellFille.swift; sourceTree = "<group>"; };
+		FFE4E4651F8EC5C0004DA79D /* protocolapp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocolapp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				FF0383281F8A504C00A21E7D /* ViewControllerTable.swift */,
 				FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */,
 				FF03831F1F8A4DEC00A21E7D /* GeneralFunctions.swift */,
+				FFE4E4611F8EB649004DA79D /* cellFille.swift */,
+				FFE4E4651F8EC5C0004DA79D /* protocolapp.swift */,
 			);
 			path = zhukapp;
 			sourceTree = "<group>";
@@ -168,11 +174,13 @@
 				FF0383271F8A4EE200A21E7D /* MenuCell.swift in Sources */,
 				FF0383201F8A4DEC00A21E7D /* GeneralFunctions.swift in Sources */,
 				FF0383231F8A4E9F00A21E7D /* AcceptCell.swift in Sources */,
+				FFE4E4661F8EC5C0004DA79D /* protocolapp.swift in Sources */,
 				FF0383291F8A504C00A21E7D /* ViewControllerTable.swift in Sources */,
 				FF03830D1F8A4CA900A21E7D /* ViewController.swift in Sources */,
 				FF0383251F8A4EBC00A21E7D /* TableViewCell.swift in Sources */,
 				FF03830B1F8A4CA900A21E7D /* AppDelegate.swift in Sources */,
 				FF9BCFD21F8BFFC0005EDB92 /* ViewControllerAdd.swift in Sources */,
+				FFE4E4621F8EB649004DA79D /* cellFille.swift in Sources */,
 				FF0383131F8A4CA900A21E7D /* zhukapp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
