@@ -48,8 +48,102 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         super.didReceiveMemoryWarning()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        var countS : Int = 0
+        
+        if (tableView == tableViewFirst && indexmenu == 0){
+            relodeArray(indexmenu:indexmenu)
+            countS = ItemsSelling.count
+        }else if(tableView == tableViewFirst && indexmenu == 1){
+            relodeArray(indexmenu:indexmenu)
+            countS = ItemsOrder.count
+        }else if(tableView == tableViewFirst && indexmenu == 2){
+            relodeArray(indexmenu:indexmenu)
+            countS = ItemsCoordination.count
+        }else if (tableView == tableViewMenu){
+            countS = 3
+        }
+        return countS
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if (tableView == tableViewFirst){
+            return navigator(indexM : indexmenu , indexrow: indexPath.row , tableView: tableView)
+        }else if (tableView == tableViewMenu){
+            guard let cellMenu = tableView.dequeueReusableCell(withIdentifier: "CellMenu") as? MenuCell else {
+                return UITableViewCell()
+            }
+            cellMenu.tabnameMenuCell.text = casestr(indextab: indexPath.row)
+            cellMenu.layer.borderWidth = 1.0
+            cellMenu.layer.borderColor = UIColor.gray.cgColor
+            return cellMenu
+        }
+        return UITableViewCell()
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (tableView == tableViewFirst){
+            if (menuSwowing){
+                openMenu("")
+            }
+            tableViewFirst.deselectRow(at: indexPath, animated:true)
+            self.title = casestr(indextab: indexmenu)
+            self.menubar.title = casestr(indextab: indexmenu)
+        }else if (tableView == tableViewMenu){
+            openMenu("")
+            indexmenu = indexPath.row
+            tableViewMenu.deselectRow(at: indexPath, animated: true)
+            self.menubar.title = casestr(indextab: indexmenu)
+            self.tableViewFirst.reloadData()
+            
+        }
+    }
+    
+    
+    @IBAction func Acceptfunc(_ sender: Any) {
+        let alertError = UIAlertController(title: "All", message:  "Acceptfunk", preferredStyle: UIAlertControllerStyle.alert)
+        alertError.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alertError, animated: true, completion: nil)
+    }
+    
+    @IBAction func Rejectfunc(_ sender: Any) {
+        let alertError = UIAlertController(title: "All", message:  "Rejectfunc", preferredStyle: UIAlertControllerStyle.alert)
+        alertError.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alertError, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func AddSel(_ sender: Any) {
+        let Storybord = UIStoryboard(name: "Main", bundle: nil)
+        let myVCTouch = Storybord.instantiateViewController(withIdentifier: "addVC") as! ViewControllerAdd
+        myVCTouch.indexmenu = indexmenu
+        myVCTouch.delegate = self
+        self.present(myVCTouch, animated: true, completion:nil)
+    }
+    
+    
+    @IBAction func openMenu(_ sender: Any) {
+        if (menuSwowing){
+            menuconst.constant = 0
+        }else{
+            menuconst.constant = 200
+        }
+        menuSwowing = !menuSwowing
+        
+        UIView.animate(withDuration: 0.3, animations:{
+            self.view.layoutIfNeeded()
+        })
+    }
+
+    func relodeTableView() {
+        self.tableViewFirst.reloadData()
+    }
+    
+    func relodeArray(indexmenu:Int) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
@@ -78,100 +172,5 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
                 print(error.localizedDescription)
             }
         }
-        self.tableViewFirst.reloadData()
-    }
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        var countS : Int = 0
-        
-        if (tableView == tableViewFirst && indexmenu == 0){
-            countS = ItemsSelling.count
-        }else if(tableView == tableViewFirst && indexmenu == 1){
-            countS = ItemsOrder.count
-        }else if(tableView == tableViewFirst && indexmenu == 2){
-            countS = ItemsCoordination.count
-        }else if (tableView == tableViewMenu){
-            countS = 3
-        }
-        return countS
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if (tableView == tableViewFirst){
-           return navigator(indexM : indexmenu,tableView: tableView)
-        }else if (tableView == tableViewMenu){
-            guard let cellMenu = tableView.dequeueReusableCell(withIdentifier: "CellMenu") as? MenuCell else {
-                return UITableViewCell()
-            }
-            cellMenu.tabnameMenuCell.text = casestr(indextab: indexPath.row)
-            cellMenu.layer.borderWidth = 1.0
-            cellMenu.layer.borderColor = UIColor.gray.cgColor
-            return cellMenu
-        }
-        return UITableViewCell()
-    }
-    
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (tableView == tableViewFirst){
-            if (menuSwowing){
-                openMenu("")
-            }
-            tableViewFirst.deselectRow(at: indexPath, animated:true)
-            self.title = casestr(indextab: indexmenu)
-            self.menubar.title = casestr(indextab: indexmenu)
-        }else if (tableView == tableViewMenu){
-            openMenu("")
-            indexmenu = indexPath.row
-            tableViewMenu.deselectRow(at: indexPath, animated: true)
-            tableViewFirst.reloadData()
-            self.menubar.title = casestr(indextab: indexmenu)
-        }
-    }
-    
-    
-    @IBAction func Acceptfunc(_ sender: Any) {
-        let alertError = UIAlertController(title: "All", message:  "Acceptfunk", preferredStyle: UIAlertControllerStyle.alert)
-        alertError.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alertError, animated: true, completion: nil)
-    }
-    
-    @IBAction func Rejectfunc(_ sender: Any) {
-        let alertError = UIAlertController(title: "All", message:  "Rejectfunc", preferredStyle: UIAlertControllerStyle.alert)
-        alertError.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alertError, animated: true, completion: nil)
-    }
-    
-    
-    @IBAction func AddSel(_ sender: Any) {
-        let Storybord = UIStoryboard(name: "Main", bundle: nil)
-        let myVCTouch = Storybord.instantiateViewController(withIdentifier: "addVC") as! ViewControllerAdd
-        myVCTouch.indexmenu = indexmenu
-        myVCTouch.delegate = self
-        self.present(myVCTouch, animated: true, completion:nil)
-        
-    }
-    
-    
-    @IBAction func openMenu(_ sender: Any) {
-        if (menuSwowing){
-            menuconst.constant = 0
-        }else{
-            menuconst.constant = 200
-        }
-        menuSwowing = !menuSwowing
-        
-        UIView.animate(withDuration: 0.3, animations:{
-            self.view.layoutIfNeeded()
-        })
-    }
-
-    func relodeTableView() {
-        print("1")
-        //self.tableViewFirst.reloadData()
     }
 }

@@ -40,7 +40,7 @@ class ViewControllerAdd: UIViewController {
             let entity = NSEntityDescription.entity(forEntityName: "Selling", in: context)
             let SellingObject = NSManagedObject(entity: entity!, insertInto: context) as! Selling
             
-            SellingObject.sum = 0
+            SellingObject.sum = NSString(string: sumVC.text!).doubleValue
             SellingObject.textstr = textVC.text!
             SellingObject.title = Shap.text!
             
@@ -57,7 +57,8 @@ class ViewControllerAdd: UIViewController {
             OrderObject.status = 0
             OrderObject.textstr = textVC.text!
             OrderObject.title = Shap.text!
-            OrderObject.sum = Float(sumVC.text!)!
+            OrderObject.sum = NSString(string: sumVC.text!).doubleValue
+            //OrderObject.sum = .bridgeToObjectiveC().floatValue
             
             do {
                 try context.save()
@@ -70,9 +71,9 @@ class ViewControllerAdd: UIViewController {
             let entity = NSEntityDescription.entity(forEntityName: "Coordination", in: context)
             let CoordinationObject = NSManagedObject(entity: entity!, insertInto: context) as! Coordination
             CoordinationObject.status = 0
-            CoordinationObject.textstr = textVC.text!
+            CoordinationObject.textstr = self.textVC.text!
             CoordinationObject.title = Shap.text!
-            CoordinationObject.sum = Float(sumVC.text!)!
+            CoordinationObject.sum = NSString(string: sumVC.text!).doubleValue
             
             do {
                 try context.save()
