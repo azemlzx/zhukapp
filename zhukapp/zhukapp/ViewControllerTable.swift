@@ -10,13 +10,13 @@ import UIKit
 import CoreData
 
 class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewDataSource , DataTableView {
-
+    // MARK: - Outlet
     @IBOutlet weak var menubar: UINavigationItem!
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var tableViewFirst: UITableView!
     @IBOutlet weak var tableViewMenu: UITableView!
     
-    
+    // MARK: - Cons
     @IBOutlet weak var menunavbar: NSLayoutConstraint!
     @IBOutlet weak var menuconst: NSLayoutConstraint!
     @IBOutlet weak var menutabconst: NSLayoutConstraint!
@@ -83,13 +83,24 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
             cellMenu.tabnameMenuCell.text = casestr(indextab: indexPath.row)
             cellMenu.imageView?.image = caseimg(indextab: indexPath.row)
             cellMenu.imageView?.tintColor = UIColor.white
-            //cellMenu.layer.borderWidth = 0.4
-            //cellMenu.layer.borderColor = UIColor.white.cgColor
             return cellMenu
         }
         return UITableViewCell()
     }
     
+    public func tableView(_ tableView:UITableView, editActionsForRowAt indexPath: IndexPath) -> [ UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .normal, title:"Delete")
+        { (action, indexPath)  in
+            self.deleteforArray(indextab : indexPath.row)
+            self.tableViewFirst.deleteRows(at: [indexPath] , with: .fade)
+        }
+        delete.backgroundColor = .red
+        
+        return [delete]
+        
+        
+    }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -97,7 +108,7 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
             if (menuSwowing){
                 openMenu("")
             }
-            tableViewFirst.deselectRow(at: indexPath, animated:true)
+            tableViewFirst.deselectRow(at: indexPath, animated : true)
             self.title = casestr(indextab: indexmenu)
             self.menubar.title = casestr(indextab: indexmenu)
         }else if (tableView == tableViewMenu){
@@ -110,6 +121,8 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         }
     }
     
+    
+    // MARK: - Outlet funk
     @IBAction func AddSel(_ sender: Any) {
         let Storybord = UIStoryboard(name: "Main", bundle: nil)
         let myVCTouch = Storybord.instantiateViewController(withIdentifier: "addVC") as! ViewControllerAdd
@@ -168,6 +181,25 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
             } catch {
                 print(error.localizedDescription)
             }
+        }
+    }
+    
+    func deleteforArray(indextab : Int){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        if(indexmenu == 0){
+            context.delete(self.ItemsSelling[indextab])
+        }else if (indexmenu == 1){
+            context.delete(self.ItemsOrder[indextab])
+        }else if(indexmenu == 2){
+            context.delete(self.ItemsCoordination[indextab])
+        }
+        
+        do {
+            try context.save()
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
         }
     }
 }
