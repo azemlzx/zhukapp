@@ -149,6 +149,11 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         })
     }
 
+    @IBAction func LogOut(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     func relodeTableView() {
         self.tableViewFirst.reloadData()
     }

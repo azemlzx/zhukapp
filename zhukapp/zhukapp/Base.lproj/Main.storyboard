@@ -85,7 +85,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyC-rL-0Fe">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyC-rL-0Fe">
                                                     <rect key="frame" x="0.0" y="40.5" width="375" height="31.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -117,7 +117,7 @@
                                             <outlet property="toplabel" destination="tw1-Nb-Ug9" id="dqB-9y-89T"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellAccept" rowHeight="92" id="Xch-Ng-4Qf" customClass="AcceptCell" customModule="zhukapp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellAccept" rowHeight="92" id="Xch-Ng-4Qf" customClass="CellAccept" customModule="zhukapp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="101" width="375" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xch-Ng-4Qf" id="2G3-Nm-VXr">
@@ -146,7 +146,7 @@
                                                         <color key="titleColor" red="0.34117648010000001" green="0.62352943419999995" blue="0.16862745579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="Acceptfunc:" destination="0yn-Mg-rqp" eventType="touchUpInside" id="iWC-AJ-GdW"/>
+                                                        <action selector="handlerAcceptbutton:" destination="Xch-Ng-4Qf" eventType="touchUpInside" id="2Gb-wK-KDb"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kM8-HE-XzR">
@@ -159,7 +159,7 @@
                                                         <color key="titleColor" red="1" green="0.18622989540000001" blue="0.28833579739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="Rejectfunc:" destination="0yn-Mg-rqp" eventType="touchUpInside" id="Kzg-cp-6JZ"/>
+                                                        <action selector="handlerRejectButton:" destination="Xch-Ng-4Qf" eventType="touchUpInside" id="jIL-T3-gB5"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -179,8 +179,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="textlabelAc" destination="djr-gc-087" id="gwf-bf-1Ou"/>
-                                            <outlet property="toplabelAc" destination="mC6-TK-11R" id="eXu-6Q-U10"/>
+                                            <outlet property="textlabel" destination="djr-gc-087" id="aVZ-dE-8yc"/>
+                                            <outlet property="toplabel" destination="mC6-TK-11R" id="2Vx-1N-eeg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -189,7 +189,7 @@
                                 <rect key="frame" x="0.0" y="64" width="0.0" height="603"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="54W-HF-hXZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="603"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="565"/>
                                         <color key="backgroundColor" red="0.43137254899999999" green="0.1215686275" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" red="0.43137254899999999" green="0.1215686275" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="separatorColor" red="0.43137254899999999" green="0.1215686275" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -241,13 +241,26 @@
                                             <outlet property="delegate" destination="0yn-Mg-rqp" id="vFO-FP-Ypq"/>
                                         </connections>
                                     </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMo-2L-EOg">
+                                        <rect key="frame" x="0.0" y="573" width="0.0" height="30"/>
+                                        <state key="normal" title="Log out">
+                                            <color key="titleColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.43137254899999999" green="0.1215686275" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="LogOut:" destination="0yn-Mg-rqp" eventType="touchUpInside" id="8d3-dI-Lw9"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.1764705926" green="0.49803921579999999" blue="0.75686275960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.43137254901960786" green="0.12156862745098039" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="54W-HF-hXZ" secondAttribute="bottom" id="Bn6-Ro-Eph"/>
+                                    <constraint firstAttribute="trailing" secondItem="bMo-2L-EOg" secondAttribute="trailing" id="Auz-vB-fXK"/>
+                                    <constraint firstAttribute="bottom" secondItem="54W-HF-hXZ" secondAttribute="bottom" constant="38" id="Bn6-Ro-Eph"/>
                                     <constraint firstItem="54W-HF-hXZ" firstAttribute="top" secondItem="Dhs-ua-U9p" secondAttribute="top" id="ByW-Hs-LMa"/>
                                     <constraint firstAttribute="trailing" secondItem="54W-HF-hXZ" secondAttribute="trailing" id="QPU-O4-aMc"/>
                                     <constraint firstItem="54W-HF-hXZ" firstAttribute="leading" secondItem="Dhs-ua-U9p" secondAttribute="leading" id="WtR-Gy-7Xt"/>
+                                    <constraint firstItem="bMo-2L-EOg" firstAttribute="leading" secondItem="Dhs-ua-U9p" secondAttribute="leading" id="XJ9-BN-0eB"/>
+                                    <constraint firstAttribute="bottom" secondItem="bMo-2L-EOg" secondAttribute="bottom" id="cb6-NX-0hn"/>
                                     <constraint firstAttribute="width" id="d4U-u3-qOf"/>
                                 </constraints>
                             </view>
@@ -279,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLR-01-F9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1732" y="98.50074962518741"/>
+            <point key="canvasLocation" x="1413.5999999999999" y="99.400299850074973"/>
         </scene>
         <!--View Controller Add-->
         <scene sceneID="X50-Nf-7cm">
@@ -378,7 +391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyj-8b-yN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2729" y="100"/>
+            <point key="canvasLocation" x="2226" y="99"/>
         </scene>
         <!--Zhuk admin-->
         <scene sceneID="k5b-EM-3lV">
@@ -416,7 +429,9 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJE-B3-2Ez">
                                 <rect key="frame" x="139" y="329" width="141" height="30"/>
-                                <state key="normal" title="Sing in"/>
+                                <state key="normal" title="Sing in">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="singIn:" destination="jcY-m4-4VG" eventType="touchUpInside" id="Oqj-DP-86K"/>
                                 </connections>

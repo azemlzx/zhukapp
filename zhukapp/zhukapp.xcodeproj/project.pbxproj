@@ -14,10 +14,10 @@
 		FF0383151F8A4CA900A21E7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF0383141F8A4CA900A21E7D /* Assets.xcassets */; };
 		FF0383181F8A4CA900A21E7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0383161F8A4CA900A21E7D /* LaunchScreen.storyboard */; };
 		FF0383201F8A4DEC00A21E7D /* GeneralFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF03831F1F8A4DEC00A21E7D /* GeneralFunctions.swift */; };
-		FF0383231F8A4E9F00A21E7D /* AcceptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0383221F8A4E9F00A21E7D /* AcceptCell.swift */; };
 		FF0383251F8A4EBC00A21E7D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0383241F8A4EBC00A21E7D /* TableViewCell.swift */; };
 		FF0383271F8A4EE200A21E7D /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0383261F8A4EE200A21E7D /* MenuCell.swift */; };
 		FF0383291F8A504C00A21E7D /* ViewControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0383281F8A504C00A21E7D /* ViewControllerTable.swift */; };
+		FF5B41421F9519AE0010BCDD /* CellAccept.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B41411F9519AE0010BCDD /* CellAccept.swift */; };
 		FF9BCFD21F8BFFC0005EDB92 /* ViewControllerAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */; };
 		FFE4E4621F8EB649004DA79D /* cellFille.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4E4611F8EB649004DA79D /* cellFille.swift */; };
 		FFE4E4661F8EC5C0004DA79D /* protocolapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4E4651F8EC5C0004DA79D /* protocolapp.swift */; };
@@ -33,10 +33,10 @@
 		FF0383171F8A4CA900A21E7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF0383191F8A4CA900A21E7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF03831F1F8A4DEC00A21E7D /* GeneralFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralFunctions.swift; sourceTree = "<group>"; };
-		FF0383221F8A4E9F00A21E7D /* AcceptCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptCell.swift; sourceTree = "<group>"; };
 		FF0383241F8A4EBC00A21E7D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		FF0383261F8A4EE200A21E7D /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		FF0383281F8A504C00A21E7D /* ViewControllerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTable.swift; sourceTree = "<group>"; };
+		FF5B41411F9519AE0010BCDD /* CellAccept.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAccept.swift; sourceTree = "<group>"; };
 		FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAdd.swift; sourceTree = "<group>"; };
 		FFE4E4611F8EB649004DA79D /* cellFille.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellFille.swift; sourceTree = "<group>"; };
 		FFE4E4651F8EC5C0004DA79D /* protocolapp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocolapp.swift; sourceTree = "<group>"; };
@@ -92,9 +92,9 @@
 		FF0383211F8A4E8400A21E7D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FF0383221F8A4E9F00A21E7D /* AcceptCell.swift */,
 				FF0383241F8A4EBC00A21E7D /* TableViewCell.swift */,
 				FF0383261F8A4EE200A21E7D /* MenuCell.swift */,
+				FF5B41411F9519AE0010BCDD /* CellAccept.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,8 +172,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF0383271F8A4EE200A21E7D /* MenuCell.swift in Sources */,
+				FF5B41421F9519AE0010BCDD /* CellAccept.swift in Sources */,
 				FF0383201F8A4DEC00A21E7D /* GeneralFunctions.swift in Sources */,
-				FF0383231F8A4E9F00A21E7D /* AcceptCell.swift in Sources */,
 				FFE4E4661F8EC5C0004DA79D /* protocolapp.swift in Sources */,
 				FF0383291F8A504C00A21E7D /* ViewControllerTable.swift in Sources */,
 				FF03830D1F8A4CA900A21E7D /* ViewController.swift in Sources */,
