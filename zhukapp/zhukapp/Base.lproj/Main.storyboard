@@ -53,8 +53,8 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Menu" id="y3K-am-9LN">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="2" style="done" id="64h-as-28X">
-                                            <color key="tintColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="menuimg" style="done" id="64h-as-28X">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="openMenu:" destination="0yn-Mg-rqp" id="Lw4-LJ-MDt"/>
                                             </connections>
@@ -205,21 +205,32 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mT9-Xk-SJ0">
-                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
+                                                            <rect key="frame" x="66" y="-1" width="134" height="59"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hw9-GQ-ogO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="65" height="59"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="59" id="QKR-jb-3x5"/>
+                                                                <constraint firstAttribute="width" constant="65" id="a63-NO-Nio"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="mT9-Xk-SJ0" firstAttribute="top" secondItem="jMc-Lm-GQj" secondAttribute="top" constant="-1" id="4kz-Gy-Pb7"/>
+                                                        <constraint firstItem="mT9-Xk-SJ0" firstAttribute="leading" secondItem="hw9-GQ-ogO" secondAttribute="trailing" constant="1" id="CYa-Og-vuf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="mT9-Xk-SJ0" secondAttribute="trailing" id="E0r-zg-FHO"/>
+                                                        <constraint firstAttribute="bottom" secondItem="hw9-GQ-ogO" secondAttribute="bottom" id="kWH-tw-qyB"/>
+                                                        <constraint firstItem="hw9-GQ-ogO" firstAttribute="top" secondItem="jMc-Lm-GQj" secondAttribute="top" id="o3i-4G-94o"/>
+                                                        <constraint firstItem="hw9-GQ-ogO" firstAttribute="leading" secondItem="jMc-Lm-GQj" secondAttribute="leading" id="xvS-gf-fZL"/>
+                                                        <constraint firstAttribute="bottom" secondItem="mT9-Xk-SJ0" secondAttribute="bottom" constant="1.5" id="yY4-uZ-NGz"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.43137254899999999" green="0.1215686275" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" red="0.43137254899999999" green="0.1215686275" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstItem="mT9-Xk-SJ0" firstAttribute="top" secondItem="pe9-dk-Nl6" secondAttribute="top" id="8D2-w2-ry6"/>
-                                                    <constraint firstAttribute="bottom" secondItem="mT9-Xk-SJ0" secondAttribute="bottom" id="WNe-mP-6FB"/>
-                                                    <constraint firstAttribute="trailing" secondItem="mT9-Xk-SJ0" secondAttribute="trailing" id="k28-0X-Mix"/>
-                                                    <constraint firstItem="mT9-Xk-SJ0" firstAttribute="leading" secondItem="pe9-dk-Nl6" secondAttribute="leading" id="nGV-pA-Z82"/>
-                                                </constraints>
                                                 <connections>
                                                     <outlet property="tabnameMenuCell" destination="mT9-Xk-SJ0" id="oLu-1L-E0S"/>
                                                 </connections>
@@ -260,13 +271,15 @@
                         <outlet property="menuView" destination="Dhs-ua-U9p" id="0NA-a8-5YK"/>
                         <outlet property="menubar" destination="y3K-am-9LN" id="nap-Z6-dB1"/>
                         <outlet property="menuconst" destination="d4U-u3-qOf" id="omg-cP-5mq"/>
+                        <outlet property="menunavbar" destination="O5X-Dr-yb9" id="hU8-qI-lNF"/>
+                        <outlet property="menutabconst" destination="Wvf-IN-bfQ" id="Rbf-nP-GvG"/>
                         <outlet property="tableViewFirst" destination="Nfl-dP-2hb" id="DN5-le-FmI"/>
                         <outlet property="tableViewMenu" destination="54W-HF-hXZ" id="BfV-LJ-Xkq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLR-01-F9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1272.8" y="98.50074962518741"/>
+            <point key="canvasLocation" x="1732" y="98.50074962518741"/>
         </scene>
         <!--View Controller Add-->
         <scene sceneID="X50-Nf-7cm">
@@ -365,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyj-8b-yN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2173.5999999999999" y="98.50074962518741"/>
+            <point key="canvasLocation" x="2729" y="100"/>
         </scene>
         <!--Zhuk admin-->
         <scene sceneID="k5b-EM-3lV">
@@ -441,7 +454,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="2" width="33" height="33"/>
+        <image name="menuimg" width="33" height="33"/>
     </resources>
     <color key="tintColor" red="0.43137254901960786" green="0.12156862745098039" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

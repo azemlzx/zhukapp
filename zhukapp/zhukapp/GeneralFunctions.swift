@@ -20,3 +20,14 @@ func casestr(indextab: Int ) -> String{
     return strreturn
 }
 
+func caseimg(indextab: Int ) -> UIImage{
+   var imgreturn : UIImage
+    switch (indextab){
+    case 0 : imgreturn = UIImage(named:"Selling")!
+    case 1 : imgreturn = UIImage(named:"Order")!
+    case 2 : imgreturn = UIImage(named:"Coordination")!
+    default: imgreturn = UIImage()
+    }
+    return imgreturn
+}
+

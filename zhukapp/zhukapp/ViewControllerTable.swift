@@ -14,9 +14,12 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
     @IBOutlet weak var menubar: UINavigationItem!
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var tableViewFirst: UITableView!
-    @IBOutlet weak var menuconst: NSLayoutConstraint!
     @IBOutlet weak var tableViewMenu: UITableView!
     
+    
+    @IBOutlet weak var menunavbar: NSLayoutConstraint!
+    @IBOutlet weak var menuconst: NSLayoutConstraint!
+    @IBOutlet weak var menutabconst: NSLayoutConstraint!
     
     var menuSwowing =  false
     var indexmenu :Int = 0
@@ -35,13 +38,15 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         tableViewFirst.dataSource = self
         tableViewFirst.delegate = self
         
-        tableViewMenu.estimatedRowHeight = 60
+        tableViewMenu.estimatedRowHeight = 60  
         tableViewMenu.rowHeight = UITableViewAutomaticDimension
         
         menuView.layer.shadowOpacity = 1
         menuView.layer.shadowRadius = 6
         tableViewMenu.tableFooterView = UIView(frame: CGRect.zero)
         self.menubar.title = casestr(indextab: indexmenu)
+        self.tableViewMenu.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        self.tableViewMenu.separatorColor = UIColor.white
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,8 +81,10 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
                 return UITableViewCell()
             }
             cellMenu.tabnameMenuCell.text = casestr(indextab: indexPath.row)
-            cellMenu.layer.borderWidth = 1.0
-            cellMenu.layer.borderColor = UIColor.gray.cgColor
+            cellMenu.imageView?.image = caseimg(indextab: indexPath.row)
+            cellMenu.imageView?.tintColor = UIColor.white
+            //cellMenu.layer.borderWidth = 0.4
+            //cellMenu.layer.borderColor = UIColor.white.cgColor
             return cellMenu
         }
         return UITableViewCell()
@@ -103,20 +110,6 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         }
     }
     
-    
-    @IBAction func Acceptfunc(_ sender: Any) {
-        let alertError = UIAlertController(title: "All", message:  "Acceptfunk", preferredStyle: UIAlertControllerStyle.alert)
-        alertError.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alertError, animated: true, completion: nil)
-    }
-    
-    @IBAction func Rejectfunc(_ sender: Any) {
-        let alertError = UIAlertController(title: "All", message:  "Rejectfunc", preferredStyle: UIAlertControllerStyle.alert)
-        alertError.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alertError, animated: true, completion: nil)
-    }
-    
-    
     @IBAction func AddSel(_ sender: Any) {
         let Storybord = UIStoryboard(name: "Main", bundle: nil)
         let myVCTouch = Storybord.instantiateViewController(withIdentifier: "addVC") as! ViewControllerAdd
@@ -129,8 +122,12 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
     @IBAction func openMenu(_ sender: Any) {
         if (menuSwowing){
             menuconst.constant = 0
+            menunavbar.constant = 0
+            menutabconst.constant = 0
         }else{
             menuconst.constant = 200
+            menunavbar.constant = 200
+            menutabconst.constant = 200
         }
         menuSwowing = !menuSwowing
         
