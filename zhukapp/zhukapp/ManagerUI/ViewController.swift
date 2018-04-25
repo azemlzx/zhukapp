@@ -30,11 +30,13 @@ class ViewController: UIViewController {
         loginText.layer.masksToBounds = true
         let attributedPlaceholderLogin = NSAttributedString(string: "Логін", attributes: [NSAttributedStringKey.paragraphStyle: centeredParagraphStyle])
         loginText.attributedPlaceholder = attributedPlaceholderLogin
+        loginText.textAlignment = NSTextAlignment.center
         // password textfild
          let attributedPlaceholderPassword = NSAttributedString(string: "Пароль", attributes: [NSAttributedStringKey.paragraphStyle: centeredParagraphStyle])
         passwordText.layer.cornerRadius = 12
         passwordText.layer.masksToBounds = true
         passwordText.attributedPlaceholder = attributedPlaceholderPassword
+        passwordText.textAlignment = NSTextAlignment.center
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,6 +44,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func singIn(_ sender: Any) {
+        
+        
+        
         let Storybord = UIStoryboard(name: "Main", bundle: nil)
         let myVCTouch = Storybord.instantiateViewController(withIdentifier: "tableVC")
         self.present(myVCTouch, animated: true, completion:nil)

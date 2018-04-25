@@ -15,15 +15,21 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var tableViewFirst: UITableView!
     @IBOutlet weak var tableViewMenu: UITableView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var position: UILabel!
     
     // MARK: - Cons
     @IBOutlet weak var menunavbar: NSLayoutConstraint!
     @IBOutlet weak var menuconst: NSLayoutConstraint!
     @IBOutlet weak var menutabconst: NSLayoutConstraint!
     
-    var menuSwowing =  false
+    @IBOutlet weak var PositionLabel: UILabel!
+    @IBOutlet weak var NameLabel: UILabel!
+    
+    var menuSwowing =  true
     var indexmenu :Int = 0
     
+    @IBOutlet weak var imageViev: UIImageView!
     var ItemsSelling: [Selling] = []            // Продажи 0
     var ItemsOrder: [Order] = []                // Заявки  1
     var ItemsCoordination: [Coordination] = []  // Согласования продаж 2
@@ -31,22 +37,22 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableViewMenu.dataSource = self
-        tableViewMenu.delegate = self
+        openMenu("")
+        //        tableViewMenu.dataSource = self
+        //        tableViewMenu.delegate = self
         
         tableViewFirst.dataSource = self
         tableViewFirst.delegate = self
         
-        tableViewMenu.estimatedRowHeight = 60  
-        tableViewMenu.rowHeight = UITableViewAutomaticDimension
+        //        tableViewMenu.estimatedRowHeight = 60
+        //        tableViewMenu.rowHeight = UITableViewAutomaticDimension
         
-        menuView.layer.shadowOpacity = 1
-        menuView.layer.shadowRadius = 6
-        tableViewMenu.tableFooterView = UIView(frame: CGRect.zero)
-        self.menubar.title = casestr(indextab: indexmenu)
-        self.tableViewMenu.separatorStyle = UITableViewCellSeparatorStyle.singleLine
-        self.tableViewMenu.separatorColor = UIColor.white
+        //        menuView.layer.shadowOpacity = 1
+        //        menuView.layer.shadowRadius = 6
+        //        tableViewMenu.tableFooterView = UIView(frame: CGRect.zero)
+        //        self.menubar.title = casestr(indextab: indexmenu)
+        //        self.tableViewMenu.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        //        self.tableViewMenu.separatorColor = UIColor.white
     }
     
     override func didReceiveMemoryWarning() {
@@ -131,23 +137,6 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         self.present(myVCTouch, animated: true, completion:nil)
     }
     
-    
-    @IBAction func openMenu(_ sender: Any) {
-        if (menuSwowing){
-            menuconst.constant = 0
-            menunavbar.constant = 0
-            menutabconst.constant = 0
-        }else{
-            menuconst.constant = 200
-            menunavbar.constant = 200
-            menutabconst.constant = 200
-        }
-        menuSwowing = !menuSwowing
-        
-        UIView.animate(withDuration: 0.3, animations:{
-            self.view.layoutIfNeeded()
-        })
-    }
 
     @IBAction func LogOut(_ sender: UIButton) {
         
@@ -188,6 +177,22 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
             }
         }
     }
+    @IBAction func openMenu(_ sender: Any) {
+        if (menuSwowing){
+            menuconst.constant = 0
+            //            menunavbar.constant = 0
+            //            menutabconst.constant = 0
+        }else{
+            menuconst.constant = 200
+            //            menunavbar.constant = 200
+            //            menutabconst.constant = 200
+        }
+        menuSwowing = !menuSwowing
+        
+        UIView.animate(withDuration: 0.3, animations:{
+            self.view.layoutIfNeeded()
+        })
+    }
     
     func deleteforArray(indextab : Int){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -205,6 +210,25 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
             try context.save()
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
+        }
+    }
+    
+    @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+        if (menuconst.constant == 200) {
+            openMenu("")
+        }
+    }
+    
+    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        if (menuconst.constant == 0) {
+            openMenu("")
+        }
+        
+    }
+    
+    @IBAction func TapSwipe(_ sender: UITapGestureRecognizer) {
+        if (menuconst.constant == 200) {
+            openMenu("")
         }
     }
 }

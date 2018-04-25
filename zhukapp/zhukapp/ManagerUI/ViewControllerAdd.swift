@@ -58,7 +58,6 @@ class ViewControllerAdd: UIViewController {
             OrderObject.textstr = textVC.text!
             OrderObject.title = Shap.text!
             OrderObject.sum = NSString(string: sumVC.text!).doubleValue
-            //OrderObject.sum = .bridgeToObjectiveC().floatValue
             
             do {
                 try context.save()

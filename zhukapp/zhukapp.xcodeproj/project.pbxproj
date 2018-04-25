@@ -19,8 +19,10 @@
 		FF0383291F8A504C00A21E7D /* ViewControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0383281F8A504C00A21E7D /* ViewControllerTable.swift */; };
 		FF47BA3D202747EA00D92402 /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF47BA3C202747EA00D92402 /* DesignableUITextField.swift */; };
 		FF5B41421F9519AE0010BCDD /* CellAccept.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B41411F9519AE0010BCDD /* CellAccept.swift */; };
+		FF68D1EC2091183200D9B732 /* ViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF68D1EB2091183200D9B732 /* ViewMenu.swift */; };
+		FF68D1EF209124AD00D9B732 /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF68D1EE209124AD00D9B732 /* MenuManager.swift */; };
 		FF9BCFD21F8BFFC0005EDB92 /* ViewControllerAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */; };
-		FFE4E4621F8EB649004DA79D /* cellFille.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4E4611F8EB649004DA79D /* cellFille.swift */; };
+		FFE4E4621F8EB649004DA79D /* CellFille.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4E4611F8EB649004DA79D /* CellFille.swift */; };
 		FFE4E4661F8EC5C0004DA79D /* protocolapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4E4651F8EC5C0004DA79D /* protocolapp.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,8 +41,10 @@
 		FF0383281F8A504C00A21E7D /* ViewControllerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTable.swift; sourceTree = "<group>"; };
 		FF47BA3C202747EA00D92402 /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		FF5B41411F9519AE0010BCDD /* CellAccept.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAccept.swift; sourceTree = "<group>"; };
+		FF68D1EB2091183200D9B732 /* ViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMenu.swift; sourceTree = "<group>"; };
+		FF68D1EE209124AD00D9B732 /* MenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
 		FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAdd.swift; sourceTree = "<group>"; };
-		FFE4E4611F8EB649004DA79D /* cellFille.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellFille.swift; sourceTree = "<group>"; };
+		FFE4E4611F8EB649004DA79D /* CellFille.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFille.swift; sourceTree = "<group>"; };
 		FFE4E4651F8EC5C0004DA79D /* protocolapp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocolapp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,18 +78,16 @@
 		FF0383091F8A4CA900A21E7D /* zhukapp */ = {
 			isa = PBXGroup;
 			children = (
+				FF68D1ED2091243D00D9B732 /* Controller */,
+				FFF01C08202BAB3100BF070A /* Manager */,
+				FFF01C07202BAAD600BF070A /* ManagerUI */,
 				FF0383211F8A4E8400A21E7D /* Model */,
 				FF03830A1F8A4CA900A21E7D /* AppDelegate.swift */,
-				FF03830C1F8A4CA900A21E7D /* ViewController.swift */,
 				FF03830E1F8A4CA900A21E7D /* Main.storyboard */,
 				FF0383141F8A4CA900A21E7D /* Assets.xcassets */,
 				FF0383161F8A4CA900A21E7D /* LaunchScreen.storyboard */,
 				FF0383191F8A4CA900A21E7D /* Info.plist */,
 				FF0383111F8A4CA900A21E7D /* zhukapp.xcdatamodeld */,
-				FF0383281F8A504C00A21E7D /* ViewControllerTable.swift */,
-				FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */,
-				FF03831F1F8A4DEC00A21E7D /* GeneralFunctions.swift */,
-				FFE4E4611F8EB649004DA79D /* cellFille.swift */,
 				FFE4E4651F8EC5C0004DA79D /* protocolapp.swift */,
 			);
 			path = zhukapp;
@@ -100,6 +102,34 @@
 				FF47BA3C202747EA00D92402 /* DesignableUITextField.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FF68D1ED2091243D00D9B732 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FFF01C07202BAAD600BF070A /* ManagerUI */ = {
+			isa = PBXGroup;
+			children = (
+				FF03830C1F8A4CA900A21E7D /* ViewController.swift */,
+				FF0383281F8A504C00A21E7D /* ViewControllerTable.swift */,
+				FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */,
+				FF68D1EB2091183200D9B732 /* ViewMenu.swift */,
+			);
+			path = ManagerUI;
+			sourceTree = "<group>";
+		};
+		FFF01C08202BAB3100BF070A /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FF03831F1F8A4DEC00A21E7D /* GeneralFunctions.swift */,
+				FFE4E4611F8EB649004DA79D /* CellFille.swift */,
+				FF68D1EE209124AD00D9B732 /* MenuManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,17 +204,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF68D1EF209124AD00D9B732 /* MenuManager.swift in Sources */,
 				FF0383271F8A4EE200A21E7D /* MenuCell.swift in Sources */,
 				FF5B41421F9519AE0010BCDD /* CellAccept.swift in Sources */,
 				FF0383201F8A4DEC00A21E7D /* GeneralFunctions.swift in Sources */,
 				FF47BA3D202747EA00D92402 /* DesignableUITextField.swift in Sources */,
 				FFE4E4661F8EC5C0004DA79D /* protocolapp.swift in Sources */,
 				FF0383291F8A504C00A21E7D /* ViewControllerTable.swift in Sources */,
+				FF68D1EC2091183200D9B732 /* ViewMenu.swift in Sources */,
 				FF03830D1F8A4CA900A21E7D /* ViewController.swift in Sources */,
 				FF0383251F8A4EBC00A21E7D /* TableViewCell.swift in Sources */,
 				FF03830B1F8A4CA900A21E7D /* AppDelegate.swift in Sources */,
 				FF9BCFD21F8BFFC0005EDB92 /* ViewControllerAdd.swift in Sources */,
-				FFE4E4621F8EB649004DA79D /* cellFille.swift in Sources */,
+				FFE4E4621F8EB649004DA79D /* CellFille.swift in Sources */,
 				FF0383131F8A4CA900A21E7D /* zhukapp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,7 +357,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8BAW4LPMZC;
 				INFOPLIST_FILE = zhukapp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = home.zhukapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -341,7 +373,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8BAW4LPMZC;
 				INFOPLIST_FILE = zhukapp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = home.zhukapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
