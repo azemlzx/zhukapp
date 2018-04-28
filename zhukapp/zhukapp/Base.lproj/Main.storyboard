@@ -209,17 +209,39 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pl9-VP-Ncl">
+                                        <rect key="frame" x="0.0" y="125" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="Cgs-7b-u43"/>
+                                            <constraint firstAttribute="height" constant="60" id="vj0-56-3Aj"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxR-UL-pJ3">
+                                        <rect key="frame" x="60" y="125" width="140" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="R9C-Oz-8xr"/>
+                                            <constraint firstAttribute="height" constant="60" id="ew2-rT-eVm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.43137254901960786" green="0.12156862745098039" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="PxR-UL-pJ3" firstAttribute="top" secondItem="XLr-Vl-svY" secondAttribute="bottom" constant="34" id="7d2-7H-sH4"/>
                                     <constraint firstItem="XLr-Vl-svY" firstAttribute="leading" secondItem="i52-zT-pFL" secondAttribute="trailing" id="LT4-mI-Kbd"/>
                                     <constraint firstItem="i52-zT-pFL" firstAttribute="leading" secondItem="P5f-H4-Wlj" secondAttribute="leading" id="NJA-Xi-7al"/>
                                     <constraint firstItem="XLr-Vl-svY" firstAttribute="top" secondItem="hGq-Pc-ZHQ" secondAttribute="bottom" constant="-1" id="OoQ-P1-Do0"/>
                                     <constraint firstAttribute="trailing" secondItem="XLr-Vl-svY" secondAttribute="trailing" id="Q4Q-Gi-cbo"/>
                                     <constraint firstAttribute="width" constant="200" id="UKT-D6-UoN"/>
+                                    <constraint firstItem="PxR-UL-pJ3" firstAttribute="leading" secondItem="pl9-VP-Ncl" secondAttribute="trailing" id="Udp-x6-2C9"/>
                                     <constraint firstAttribute="trailing" secondItem="hGq-Pc-ZHQ" secondAttribute="trailing" id="eGg-qb-yid"/>
+                                    <constraint firstItem="pl9-VP-Ncl" firstAttribute="top" secondItem="i52-zT-pFL" secondAttribute="bottom" constant="15" id="fjy-SR-13S"/>
+                                    <constraint firstAttribute="trailing" secondItem="PxR-UL-pJ3" secondAttribute="trailing" id="kwW-pv-CJA"/>
                                     <constraint firstItem="hGq-Pc-ZHQ" firstAttribute="top" secondItem="P5f-H4-Wlj" secondAttribute="top" constant="50" id="qTx-Zb-jBS"/>
                                     <constraint firstItem="hGq-Pc-ZHQ" firstAttribute="leading" secondItem="i52-zT-pFL" secondAttribute="trailing" constant="1" id="tPN-93-03X"/>
+                                    <constraint firstItem="pl9-VP-Ncl" firstAttribute="leading" secondItem="P5f-H4-Wlj" secondAttribute="leading" id="uqr-uc-xdd"/>
                                     <constraint firstItem="i52-zT-pFL" firstAttribute="top" secondItem="P5f-H4-Wlj" secondAttribute="top" constant="50" id="wQ6-sc-DHJ"/>
                                 </constraints>
                             </view>
