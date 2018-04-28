@@ -48,7 +48,7 @@ func cellSelling(indexcellrow: Int,tableView: UITableView)-> UITableViewCell{
 
 func cellOrder(indexcellrow: Int,tableView: UITableView)-> UITableViewCell{
     
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? TableViewCell else {
+    guard (tableView.dequeueReusableCell(withIdentifier: "Cell") as? TableViewCell) != nil else {
         return UITableViewCell()
     }
     var ItemsOrder: [Order] = []
@@ -94,7 +94,6 @@ func cellOrder(indexcellrow: Int,tableView: UITableView)-> UITableViewCell{
         
         return cell
     }
-    return UITableViewCell()
     
 }
 
@@ -140,7 +139,6 @@ func cellCoordination(indexcellrow: Int,tableView: UITableView)-> UITableViewCel
         
         return cell
     }
-    return UITableViewCell()
 }
 
 func updataData (Items : [Any] , indexitems : Int, stauscell : Int , tableViewT: UITableView){

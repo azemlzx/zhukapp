@@ -182,6 +182,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="VWi-ef-zEo" appends="YES" id="Afl-Ie-bLa"/>
+                                    <outletCollection property="gestureRecognizers" destination="AWx-hu-LOn" appends="YES" id="1bx-YM-IcV"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5f-H4-Wlj" customClass="ViewMenu" customModule="zhukapp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="200" height="667"/>
