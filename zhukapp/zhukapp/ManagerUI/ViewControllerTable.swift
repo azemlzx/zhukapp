@@ -15,21 +15,33 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var tableViewFirst: UITableView!
     @IBOutlet weak var tableViewMenu: UITableView!
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var position: UILabel!
+    @IBOutlet weak var logOut: UIButton!
+    
     
     // MARK: - Cons
     @IBOutlet weak var menunavbar: NSLayoutConstraint!
     @IBOutlet weak var menuconst: NSLayoutConstraint!
     @IBOutlet weak var menutabconst: NSLayoutConstraint!
     
+    // MARK: - Image
+    @IBOutlet weak var ImageFirst: UIImageView!
+    @IBOutlet weak var imageSecond: UIImageView!
+    @IBOutlet weak var imageThrird: UIImageView!
+    @IBOutlet weak var imageViev: UIImageView!
+    
+    // MARK: - Label
     @IBOutlet weak var PositionLabel: UILabel!
     @IBOutlet weak var NameLabel: UILabel!
+    @IBOutlet weak var labelFirst: UILabel!
+    @IBOutlet weak var labelSecond: UILabel!
+    @IBOutlet weak var labelThrird: UILabel!
+    
+    
     
     var menuSwowing =  true
     var indexmenu :Int = 0
     
-    @IBOutlet weak var imageViev: UIImageView!
+    
     var ItemsSelling: [Selling] = []            // Продажи 0
     var ItemsOrder: [Order] = []                // Заявки  1
     var ItemsCoordination: [Coordination] = []  // Согласования продаж 2
@@ -38,21 +50,21 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         openMenu("")
-        //        tableViewMenu.dataSource = self
-        //        tableViewMenu.delegate = self
         
         tableViewFirst.dataSource = self
         tableViewFirst.delegate = self
         
-        //        tableViewMenu.estimatedRowHeight = 60
-        //        tableViewMenu.rowHeight = UITableViewAutomaticDimension
+        imageViev.image = UIImage(named:"no-photo avatar")
         
-        //        menuView.layer.shadowOpacity = 1
-        //        menuView.layer.shadowRadius = 6
-        //        tableViewMenu.tableFooterView = UIView(frame: CGRect.zero)
-        //        self.menubar.title = casestr(indextab: indexmenu)
-        //        self.tableViewMenu.separatorStyle = UITableViewCellSeparatorStyle.singleLine
-        //        self.tableViewMenu.separatorColor = UIColor.white
+        NameLabel.text = "Олександр Землянський"
+        PositionLabel.text = "Програміст 1с"
+        
+        logOut.backgroundColor = .clear
+        logOut.layer.cornerRadius = 15
+        logOut.layer.borderWidth = 1
+        logOut.layer.borderColor = UIColor.white.cgColor
+        
+        self.menubar.title = casestr(indextab: indexmenu)
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,8 +84,6 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         }else if(tableView == tableViewFirst && indexmenu == 2){
             relodeArray(indexmenu:indexmenu)
             countS = ItemsCoordination.count
-        }else if (tableView == tableViewMenu){
-            countS = 3
         }
         return countS
     }
@@ -82,18 +92,11 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         
         if (tableView == tableViewFirst){
             return navigator(indexM : indexmenu , indexrow: indexPath.row , tableView: tableView)
-        }else if (tableView == tableViewMenu){
-            guard let cellMenu = tableView.dequeueReusableCell(withIdentifier: "CellMenu") as? MenuCell else {
-                return UITableViewCell()
-            }
-            cellMenu.tabnameMenuCell.text = casestr(indextab: indexPath.row)
-            cellMenu.imageView?.image = caseimg(indextab: indexPath.row)
-            cellMenu.imageView?.tintColor = UIColor.white
-            return cellMenu
         }
-        return UITableViewCell()
+        else{
+           return UITableViewCell()
+        }
     }
-    
     public func tableView(_ tableView:UITableView, editActionsForRowAt indexPath: IndexPath) -> [ UITableViewRowAction]? {
         
         let delete = UITableViewRowAction(style: .normal, title:"Delete")
@@ -117,24 +120,7 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
             tableViewFirst.deselectRow(at: indexPath, animated : true)
             self.title = casestr(indextab: indexmenu)
             self.menubar.title = casestr(indextab: indexmenu)
-        }else if (tableView == tableViewMenu){
-            openMenu("")
-            indexmenu = indexPath.row
-            tableViewMenu.deselectRow(at: indexPath, animated: true)
-            self.menubar.title = casestr(indextab: indexmenu)
-            self.tableViewFirst.reloadData()
-            
         }
-    }
-    
-    
-    // MARK: - Outlet funk
-    @IBAction func AddSel(_ sender: Any) {
-        let Storybord = UIStoryboard(name: "Main", bundle: nil)
-        let myVCTouch = Storybord.instantiateViewController(withIdentifier: "addVC") as! ViewControllerAdd
-        myVCTouch.indexmenu = indexmenu
-        myVCTouch.delegate = self
-        self.present(myVCTouch, animated: true, completion:nil)
     }
     
 
