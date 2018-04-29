@@ -217,15 +217,47 @@
                                             <constraint firstAttribute="height" constant="436" id="kOj-IP-Zfb"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="39N-nC-9zH">
-                                                <rect key="frame" x="0.0" y="28" width="200" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="60" id="39N-nC-9zH" customClass="MenuCell" customModule="zhukapp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="200" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="39N-nC-9zH" id="XXr-w5-Pct">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="59.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RwN-9x-hhw">
+                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="60" id="cUQ-m9-DIr"/>
+                                                                <constraint firstAttribute="width" constant="60" id="hxh-st-fpa"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsE-El-2zx">
+                                                            <rect key="frame" x="60" y="0.0" width="140" height="60"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="RwN-9x-hhw" firstAttribute="leading" secondItem="XXr-w5-Pct" secondAttribute="leading" id="1rj-4e-SLY"/>
+                                                        <constraint firstItem="NsE-El-2zx" firstAttribute="top" secondItem="XXr-w5-Pct" secondAttribute="top" id="B5E-cb-YmM"/>
+                                                        <constraint firstAttribute="bottom" secondItem="RwN-9x-hhw" secondAttribute="bottom" id="FiA-B1-eGt"/>
+                                                        <constraint firstAttribute="bottom" secondItem="NsE-El-2zx" secondAttribute="bottom" id="KyQ-ma-rF5"/>
+                                                        <constraint firstAttribute="trailing" secondItem="NsE-El-2zx" secondAttribute="trailing" id="MKN-b2-7Wy"/>
+                                                        <constraint firstItem="NsE-El-2zx" firstAttribute="leading" secondItem="RwN-9x-hhw" secondAttribute="trailing" id="WMC-lF-NW1"/>
+                                                        <constraint firstItem="RwN-9x-hhw" firstAttribute="top" secondItem="XXr-w5-Pct" secondAttribute="top" id="gzc-ul-fCQ"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="imageViewMenu" destination="RwN-9x-hhw" id="vPj-da-IRD"/>
+                                                    <outlet property="labelMenu" destination="NsE-El-2zx" id="HwH-3N-D5U"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="0yn-Mg-rqp" id="HKg-Ja-DXu"/>
+                                            <outlet property="delegate" destination="0yn-Mg-rqp" id="feB-kC-OdG"/>
+                                        </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gw-If-iNE">
                                         <rect key="frame" x="0.0" y="569" width="200" height="43"/>

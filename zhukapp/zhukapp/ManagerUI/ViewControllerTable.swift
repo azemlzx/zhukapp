@@ -84,6 +84,10 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         }else if(tableView == tableViewFirst && indexmenu == 2){
             relodeArray(indexmenu:indexmenu)
             countS = ItemsCoordination.count
+        }else if(tableView == tableViewMenu){
+                print("1")
+//            relodeArray(indexmenu:indexmenu)
+//            countS = ItemsCoordination.count
         }
         return countS
     }
@@ -129,6 +133,7 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         self.dismiss(animated: true, completion: nil)
         
     }
+    
     func relodeTableView() {
         self.tableViewFirst.reloadData()
     }

@@ -10,6 +10,8 @@ import UIKit
 
 class MenuCell: UITableViewCell {
 
-     @IBOutlet weak var tabnameMenuCell: UILabel!
-
+    @IBOutlet weak var imageViewMenu: UIImageView!
+    
+    @IBOutlet weak var labelMenu: UILabel!
+    
 }
