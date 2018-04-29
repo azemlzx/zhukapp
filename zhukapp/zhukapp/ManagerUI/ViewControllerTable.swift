@@ -17,30 +17,20 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableViewMenu: UITableView!
     @IBOutlet weak var logOut: UIButton!
     
-    
     // MARK: - Cons
     @IBOutlet weak var menunavbar: NSLayoutConstraint!
     @IBOutlet weak var menuconst: NSLayoutConstraint!
     @IBOutlet weak var menutabconst: NSLayoutConstraint!
     
     // MARK: - Image
-    @IBOutlet weak var ImageFirst: UIImageView!
-    @IBOutlet weak var imageSecond: UIImageView!
-    @IBOutlet weak var imageThrird: UIImageView!
     @IBOutlet weak var imageViev: UIImageView!
     
     // MARK: - Label
     @IBOutlet weak var PositionLabel: UILabel!
     @IBOutlet weak var NameLabel: UILabel!
-    @IBOutlet weak var labelFirst: UILabel!
-    @IBOutlet weak var labelSecond: UILabel!
-    @IBOutlet weak var labelThrird: UILabel!
-    
-    
     
     var menuSwowing =  true
     var indexmenu :Int = 0
-    
     
     var ItemsSelling: [Selling] = []            // Продажи 0
     var ItemsOrder: [Order] = []                // Заявки  1
@@ -51,9 +41,6 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         openMenu("")
         
-        tableViewFirst.dataSource = self
-        tableViewFirst.delegate = self
-        
         imageViev.image = UIImage(named:"no-photo avatar")
         
         NameLabel.text = "Олександр Землянський"
@@ -61,7 +48,7 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         
         logOut.backgroundColor = .clear
         logOut.layer.cornerRadius = 15
-        logOut.layer.borderWidth = 1
+        logOut.layer.borderWidth = 2
         logOut.layer.borderColor = UIColor.white.cgColor
         
         self.menubar.title = casestr(indextab: indexmenu)
@@ -85,9 +72,7 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
             relodeArray(indexmenu:indexmenu)
             countS = ItemsCoordination.count
         }else if(tableView == tableViewMenu){
-                print("1")
-//            relodeArray(indexmenu:indexmenu)
-//            countS = ItemsCoordination.count
+            countS = 3
         }
         return countS
     }
@@ -96,8 +81,9 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         
         if (tableView == tableViewFirst){
             return navigator(indexM : indexmenu , indexrow: indexPath.row , tableView: tableView)
-        }
-        else{
+        }else if (tableView == tableViewMenu){
+            return navigatorMenu(indexrow: indexPath.row , tableView: tableView)
+        }else{
            return UITableViewCell()
         }
     }
