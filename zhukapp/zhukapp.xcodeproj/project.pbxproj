@@ -22,7 +22,7 @@
 		FF68D1EC2091183200D9B732 /* ViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF68D1EB2091183200D9B732 /* ViewMenu.swift */; };
 		FF68D1EF209124AD00D9B732 /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF68D1EE209124AD00D9B732 /* MenuManager.swift */; };
 		FF9BCFD21F8BFFC0005EDB92 /* ViewControllerAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */; };
-		FFE4E4621F8EB649004DA79D /* CellFille.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4E4611F8EB649004DA79D /* CellFille.swift */; };
+		FFE4E4621F8EB649004DA79D /* CellManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4E4611F8EB649004DA79D /* CellManeger.swift */; };
 		FFE4E4661F8EC5C0004DA79D /* protocolapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4E4651F8EC5C0004DA79D /* protocolapp.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +44,7 @@
 		FF68D1EB2091183200D9B732 /* ViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMenu.swift; sourceTree = "<group>"; };
 		FF68D1EE209124AD00D9B732 /* MenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
 		FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAdd.swift; sourceTree = "<group>"; };
-		FFE4E4611F8EB649004DA79D /* CellFille.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFille.swift; sourceTree = "<group>"; };
+		FFE4E4611F8EB649004DA79D /* CellManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellManeger.swift; sourceTree = "<group>"; };
 		FFE4E4651F8EC5C0004DA79D /* protocolapp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocolapp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				FF03831F1F8A4DEC00A21E7D /* GeneralFunctions.swift */,
-				FFE4E4611F8EB649004DA79D /* CellFille.swift */,
+				FFE4E4611F8EB649004DA79D /* CellManeger.swift */,
 				FF68D1EE209124AD00D9B732 /* MenuManager.swift */,
 			);
 			path = Manager;
@@ -216,7 +216,7 @@
 				FF0383251F8A4EBC00A21E7D /* TableViewCell.swift in Sources */,
 				FF03830B1F8A4CA900A21E7D /* AppDelegate.swift in Sources */,
 				FF9BCFD21F8BFFC0005EDB92 /* ViewControllerAdd.swift in Sources */,
-				FFE4E4621F8EB649004DA79D /* CellFille.swift in Sources */,
+				FFE4E4621F8EB649004DA79D /* CellManeger.swift in Sources */,
 				FF0383131F8A4CA900A21E7D /* zhukapp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

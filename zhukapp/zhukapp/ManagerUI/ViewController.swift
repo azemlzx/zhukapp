@@ -45,8 +45,6 @@ class ViewController: UIViewController {
     
     @IBAction func singIn(_ sender: Any) {
         
-        
-        
         let Storybord = UIStoryboard(name: "Main", bundle: nil)
         let myVCTouch = Storybord.instantiateViewController(withIdentifier: "tableVC")
         self.present(myVCTouch, animated: true, completion:nil)

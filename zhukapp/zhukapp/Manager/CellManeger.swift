@@ -22,31 +22,12 @@ func navigator(indexM: Int, indexrow:Int, tableView: UITableView) -> UITableView
 }
 
 func navigatorMenu(indexrow:Int, tableView: UITableView) -> UITableViewCell {
-    if (indexrow == 0){
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellMenu") as? MenuCell else {
-            return UITableViewCell()
-        }
-        cell.imageViewMenu.image = caseimg(indextab: indexrow)
-        cell.labelMenu.text = casestr(indextab: indexrow)
-        return cell
-        
-    }else if (indexrow == 1){
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellMenu") as? MenuCell else {
-            return UITableViewCell()
-        }
-        cell.imageViewMenu.image = caseimg(indextab: indexrow)
-        cell.labelMenu.text = casestr(indextab: indexrow)
-        return cell
-        
-    }else if (indexrow == 2){
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellMenu") as? MenuCell else {
-            return UITableViewCell()
-        }
-        cell.imageViewMenu.image = caseimg(indextab: indexrow)
-        cell.labelMenu.text = casestr(indextab: indexrow)
-        return cell
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellMenu") as? MenuCell else {
+        return UITableViewCell()
     }
-    return UITableViewCell()
+    cell.imageViewMenu.image = caseimg(indextab: indexrow)
+    cell.labelMenu.text = casestr(indextab: indexrow)
+    return cell
 }
 
 func cellSelling(indexcellrow: Int,tableView: UITableView)-> UITableViewCell{

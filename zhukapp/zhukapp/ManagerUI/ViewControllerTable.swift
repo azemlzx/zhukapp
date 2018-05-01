@@ -41,6 +41,8 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         openMenu("")
         
+        
+        tableViewMenu.tableFooterView = UIView.init(frame: CGRect.zero)
         imageViev.image = UIImage(named:"no-photo avatar")
         
         NameLabel.text = "Олександр Землянський"
@@ -101,6 +103,9 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         
     }
     
+
+    
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (tableView == tableViewFirst){
@@ -110,6 +115,15 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
             tableViewFirst.deselectRow(at: indexPath, animated : true)
             self.title = casestr(indextab: indexmenu)
             self.menubar.title = casestr(indextab: indexmenu)
+        }else if (tableView == tableViewMenu){
+            indexmenu = indexPath.row
+            tableViewMenu.deselectRow(at: indexPath, animated : true)
+            self.title = casestr(indextab: indexmenu)
+            self.menubar.title = casestr(indextab: indexmenu)
+            if (menuSwowing){
+                openMenu("")
+            }
+            
         }
     }
     
@@ -157,12 +171,8 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
     @IBAction func openMenu(_ sender: Any) {
         if (menuSwowing){
             menuconst.constant = 0
-            //            menunavbar.constant = 0
-            //            menutabconst.constant = 0
         }else{
             menuconst.constant = 200
-            //            menunavbar.constant = 200
-            //            menutabconst.constant = 200
         }
         menuSwowing = !menuSwowing
         

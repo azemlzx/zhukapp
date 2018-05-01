@@ -13,7 +13,6 @@ class ViewMenu: UIView{
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         
-        print("11")
     }
     
 }
