@@ -13,7 +13,7 @@
 		FF0383131F8A4CA900A21E7D /* zhukapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF0383111F8A4CA900A21E7D /* zhukapp.xcdatamodeld */; };
 		FF0383151F8A4CA900A21E7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF0383141F8A4CA900A21E7D /* Assets.xcassets */; };
 		FF0383181F8A4CA900A21E7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0383161F8A4CA900A21E7D /* LaunchScreen.storyboard */; };
-		FF0383201F8A4DEC00A21E7D /* GeneralFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF03831F1F8A4DEC00A21E7D /* GeneralFunctions.swift */; };
+		FF0383201F8A4DEC00A21E7D /* UpdateMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF03831F1F8A4DEC00A21E7D /* UpdateMenu.swift */; };
 		FF0383251F8A4EBC00A21E7D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0383241F8A4EBC00A21E7D /* TableViewCell.swift */; };
 		FF0383271F8A4EE200A21E7D /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0383261F8A4EE200A21E7D /* MenuCell.swift */; };
 		FF0383291F8A504C00A21E7D /* ViewControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0383281F8A504C00A21E7D /* ViewControllerTable.swift */; };
@@ -24,6 +24,10 @@
 		FF9BCFD21F8BFFC0005EDB92 /* ViewControllerAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */; };
 		FFE4E4621F8EB649004DA79D /* CellManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4E4611F8EB649004DA79D /* CellManeger.swift */; };
 		FFE4E4661F8EC5C0004DA79D /* protocolapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4E4651F8EC5C0004DA79D /* protocolapp.swift */; };
+		FFF4522F209FA4CF00B7BEE4 /* StructJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF4522E209FA4CF00B7BEE4 /* StructJson.swift */; };
+		FFF45231209FA5F800B7BEE4 /* APIManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF45230209FA5F800B7BEE4 /* APIManeger.swift */; };
+		FFF45233209FA67F00B7BEE4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF45232209FA67F00B7BEE4 /* Constants.swift */; };
+		FFF45236209FA75B00B7BEE4 /* Func.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF45235209FA75B00B7BEE4 /* Func.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +39,7 @@
 		FF0383141F8A4CA900A21E7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF0383171F8A4CA900A21E7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF0383191F8A4CA900A21E7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF03831F1F8A4DEC00A21E7D /* GeneralFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralFunctions.swift; sourceTree = "<group>"; };
+		FF03831F1F8A4DEC00A21E7D /* UpdateMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMenu.swift; sourceTree = "<group>"; };
 		FF0383241F8A4EBC00A21E7D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		FF0383261F8A4EE200A21E7D /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		FF0383281F8A504C00A21E7D /* ViewControllerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTable.swift; sourceTree = "<group>"; };
@@ -46,6 +50,10 @@
 		FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAdd.swift; sourceTree = "<group>"; };
 		FFE4E4611F8EB649004DA79D /* CellManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellManeger.swift; sourceTree = "<group>"; };
 		FFE4E4651F8EC5C0004DA79D /* protocolapp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocolapp.swift; sourceTree = "<group>"; };
+		FFF4522E209FA4CF00B7BEE4 /* StructJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructJson.swift; sourceTree = "<group>"; };
+		FFF45230209FA5F800B7BEE4 /* APIManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManeger.swift; sourceTree = "<group>"; };
+		FFF45232209FA67F00B7BEE4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FFF45235209FA75B00B7BEE4 /* Func.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Func.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,7 @@
 		FF0383091F8A4CA900A21E7D /* zhukapp */ = {
 			isa = PBXGroup;
 			children = (
+				FFF45234209FA68A00B7BEE4 /* Helpers */,
 				FF68D1ED2091243D00D9B732 /* Controller */,
 				FFF01C08202BAB3100BF070A /* Manager */,
 				FFF01C07202BAAD600BF070A /* ManagerUI */,
@@ -100,6 +109,7 @@
 				FF0383261F8A4EE200A21E7D /* MenuCell.swift */,
 				FF5B41411F9519AE0010BCDD /* CellAccept.swift */,
 				FF47BA3C202747EA00D92402 /* DesignableUITextField.swift */,
+				FFF4522E209FA4CF00B7BEE4 /* StructJson.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,11 +135,21 @@
 		FFF01C08202BAB3100BF070A /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				FF03831F1F8A4DEC00A21E7D /* GeneralFunctions.swift */,
+				FF03831F1F8A4DEC00A21E7D /* UpdateMenu.swift */,
 				FFE4E4611F8EB649004DA79D /* CellManeger.swift */,
 				FF68D1EE209124AD00D9B732 /* MenuManager.swift */,
+				FFF45230209FA5F800B7BEE4 /* APIManeger.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		FFF45234209FA68A00B7BEE4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FFF45232209FA67F00B7BEE4 /* Constants.swift */,
+				FFF45235209FA75B00B7BEE4 /* Func.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,14 +225,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF68D1EF209124AD00D9B732 /* MenuManager.swift in Sources */,
+				FFF45233209FA67F00B7BEE4 /* Constants.swift in Sources */,
 				FF0383271F8A4EE200A21E7D /* MenuCell.swift in Sources */,
 				FF5B41421F9519AE0010BCDD /* CellAccept.swift in Sources */,
-				FF0383201F8A4DEC00A21E7D /* GeneralFunctions.swift in Sources */,
+				FF0383201F8A4DEC00A21E7D /* UpdateMenu.swift in Sources */,
+				FFF45236209FA75B00B7BEE4 /* Func.swift in Sources */,
+				FFF45231209FA5F800B7BEE4 /* APIManeger.swift in Sources */,
 				FF47BA3D202747EA00D92402 /* DesignableUITextField.swift in Sources */,
 				FFE4E4661F8EC5C0004DA79D /* protocolapp.swift in Sources */,
 				FF0383291F8A504C00A21E7D /* ViewControllerTable.swift in Sources */,
 				FF68D1EC2091183200D9B732 /* ViewMenu.swift in Sources */,
 				FF03830D1F8A4CA900A21E7D /* ViewController.swift in Sources */,
+				FFF4522F209FA4CF00B7BEE4 /* StructJson.swift in Sources */,
 				FF0383251F8A4EBC00A21E7D /* TableViewCell.swift in Sources */,
 				FF03830B1F8A4CA900A21E7D /* AppDelegate.swift in Sources */,
 				FF9BCFD21F8BFFC0005EDB92 /* ViewControllerAdd.swift in Sources */,

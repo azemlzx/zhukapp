@@ -29,9 +29,11 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
     @IBOutlet weak var PositionLabel: UILabel!
     @IBOutlet weak var NameLabel: UILabel!
     
+    
     var menuSwowing =  true
     var indexmenu :Int = 0
     
+    // MARK: - MenuItem
     var ItemsSelling: [Selling] = []            // Продажи 0
     var ItemsOrder: [Order] = []                // Заявки  1
     var ItemsCoordination: [Coordination] = []  // Согласования продаж 2
@@ -45,7 +47,7 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         tableViewMenu.tableFooterView = UIView.init(frame: CGRect.zero)
         imageViev.image = UIImage(named:"no-photo avatar")
         
-        NameLabel.text = "Олександр Землянський"
+        NameLabel.text = ConstantsSession.NameUserSession
         PositionLabel.text = "Програміст 1с"
         
         logOut.backgroundColor = .clear
