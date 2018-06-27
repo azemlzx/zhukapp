@@ -43,12 +43,13 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         openMenu("")
         
+        downloadData()
         
         tableViewMenu.tableFooterView = UIView.init(frame: CGRect.zero)
         imageViev.image = UIImage(named:"no-photo avatar")
         
-        NameLabel.text = ConstantsSession.NameUserSession
-        PositionLabel.text = "Програміст 1с"
+        NameLabel.text = ConstantsSession.nameUserSession
+        PositionLabel.text = ConstantsSession.positionUser
         
         logOut.backgroundColor = .clear
         logOut.layer.cornerRadius = 15
@@ -69,12 +70,12 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         if (tableView == tableViewFirst && indexmenu == 0){
             relodeArray(indexmenu:indexmenu)
             countS = ItemsSelling.count
-        }else if(tableView == tableViewFirst && indexmenu == 1){
-            relodeArray(indexmenu:indexmenu)
-            countS = ItemsOrder.count
-        }else if(tableView == tableViewFirst && indexmenu == 2){
-            relodeArray(indexmenu:indexmenu)
-            countS = ItemsCoordination.count
+//        }else if(tableView == tableViewFirst && indexmenu == 1){
+//            relodeArray(indexmenu:indexmenu)
+//            countS = ItemsOrder.count
+//        }else if(tableView == tableViewFirst && indexmenu == 2){
+//            relodeArray(indexmenu:indexmenu)
+//            countS = ItemsCoordination.count
         }else if(tableView == tableViewMenu){
             countS = 3
         }

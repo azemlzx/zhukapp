@@ -78,7 +78,7 @@ class ViewController: UIViewController {
             Authorization,UserKod,idSession in
             
             if (Authorization) {
-                ConstantsSession.NameUserSession = login
+                ConstantsSession.nameUserSession = login
                 ConstantsSession.idSession = idSession!
                 ConstantsSession.idUserSession = UserKod!
                 DispatchQueue.main.async(execute: {

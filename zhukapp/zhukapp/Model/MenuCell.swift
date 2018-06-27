@@ -11,7 +11,6 @@ import UIKit
 class MenuCell: UITableViewCell {
 
     @IBOutlet weak var imageViewMenu: UIImageView!
-    
     @IBOutlet weak var labelMenu: UILabel!
     
 }

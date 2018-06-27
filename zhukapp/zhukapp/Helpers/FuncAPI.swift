@@ -13,8 +13,25 @@ func encodingJSONServer(aString:String) -> String {
     var strEncoded : String = aString.replacingOccurrences(of:"\\", with: "")
     strEncoded = strEncoded.replacingOccurrences(of:"rnt", with: "")
     strEncoded = strEncoded.replacingOccurrences(of:"rn", with: "")
-//    strEncoded = strEncoded.replacingOccurrences(of:"t", with: "")
+    strEncoded = strEncoded.replacingOccurrences(of:"t\\", with: "")
     strEncoded.removeFirst()
     strEncoded.removeLast()
     return strEncoded
+}
+
+func downloadData() {
+    getSales(userKod: ConstantsSession.idUserSession, completion:
+        {Authorization in
+            
+            if (Authorization){
+                
+            }
+            
+            
+    })
+            
+            
+    
+    
+    
 }

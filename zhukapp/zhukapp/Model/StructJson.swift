@@ -17,3 +17,12 @@ struct AuthorizationResponse : Codable {
     let ErrorCode : String?
     let ErrorString : String?
 }
+
+struct UserDataResponse : Codable {
+    let Position : String?
+}
+
+struct SalesResponse : Codable {
+    let documentReport: String?
+    let documentCheck: String
+}

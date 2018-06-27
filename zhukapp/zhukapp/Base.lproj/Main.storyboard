@@ -183,6 +183,44 @@
                                             <outlet property="toplabel" destination="mC6-TK-11R" id="2Vx-1N-eeg"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellSales" rowHeight="92" id="861-zo-7nf" customClass="CellSalesView" customModule="zhukapp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="193" width="375" height="92"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="861-zo-7nf" id="usI-tP-SSJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zt7-Ar-Wmc">
+                                                    <rect key="frame" x="15" y="16" width="170" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="170" id="SSS-SB-u1u"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22m-sy-0cf">
+                                                    <rect key="frame" x="185" y="5" width="190" height="81.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="22m-sy-0cf" secondAttribute="bottom" constant="5" id="Dej-PA-Xn9"/>
+                                                <constraint firstItem="zt7-Ar-Wmc" firstAttribute="bottom" secondItem="usI-tP-SSJ" secondAttribute="bottomMargin" constant="5" id="EMc-Hd-qLu"/>
+                                                <constraint firstItem="22m-sy-0cf" firstAttribute="leading" secondItem="zt7-Ar-Wmc" secondAttribute="trailing" id="KCB-Gt-Rep"/>
+                                                <constraint firstAttribute="trailing" secondItem="22m-sy-0cf" secondAttribute="trailing" id="fGj-ZK-NNg"/>
+                                                <constraint firstItem="zt7-Ar-Wmc" firstAttribute="top" secondItem="usI-tP-SSJ" secondAttribute="topMargin" constant="5" id="fb3-uG-LZM"/>
+                                                <constraint firstItem="zt7-Ar-Wmc" firstAttribute="leading" secondItem="usI-tP-SSJ" secondAttribute="leadingMargin" id="j6C-GN-dEQ"/>
+                                                <constraint firstItem="22m-sy-0cf" firstAttribute="top" secondItem="usI-tP-SSJ" secondAttribute="top" constant="5" id="jcL-v0-tqs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="amount" destination="22m-sy-0cf" id="cp0-xx-dSJ"/>
+                                            <outlet property="document" destination="zt7-Ar-Wmc" id="ETf-pf-daR"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="0yn-Mg-rqp" id="86w-Rm-Bk8"/>
@@ -190,7 +228,7 @@
                                     <outletCollection property="gestureRecognizers" destination="KaM-q3-MqQ" appends="YES" id="kzx-55-oK5"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5f-H4-Wlj" customClass="ViewMenu" customModule="zhukapp">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5f-H4-Wlj" customClass="ViewMenu" customModule="zhukapp">
                                 <rect key="frame" x="0.0" y="0.0" width="200" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i52-zT-pFL">
@@ -353,7 +391,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1522" y="97"/>
+            <point key="canvasLocation" x="1520.8" y="96.7016491754123"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xA0-Ql-G11">

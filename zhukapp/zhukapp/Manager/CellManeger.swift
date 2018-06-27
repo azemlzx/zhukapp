@@ -12,7 +12,7 @@ import CoreData
 
 func navigator(indexM: Int, indexrow:Int, tableView: UITableView) -> UITableViewCell {
     if (indexM == 0){
-        return cellSelling(indexcellrow: indexrow ,tableView: tableView)
+        return cellSales(indexrow: indexrow ,tableView: tableView)
     }else if (indexM == 1){
         return cellOrder(indexcellrow: indexrow,tableView: tableView)
     }else if (indexM == 2){
@@ -27,6 +27,19 @@ func navigatorMenu(indexrow:Int, tableView: UITableView) -> UITableViewCell {
     }
     cell.imageViewMenu.image = caseimg(indextab: indexrow)
     cell.labelMenu.text = casestr(indextab: indexrow)
+    return cell
+}
+
+func cellSales(indexrow:Int, tableView: UITableView) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellSales") as? CellSalesView else {
+        return UITableViewCell()
+    }
+    
+    let stSellingData = ConstantsSession.arraySellingData![indexrow]
+    
+    cell.document.text = stSellingData.document
+    cell.amount.text = stSellingData.amount
+
     return cell
 }
 
