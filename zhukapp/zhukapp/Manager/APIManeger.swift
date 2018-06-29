@@ -82,7 +82,7 @@ func getUserData(userKod:String,completion: @escaping (_ Authorization: Bool,_ P
 }
 
 
-func getSales(userKod:String,completion: @escaping (_ Authorization: Bool)->())
+func getSales(userKod:String,completion: @escaping (_ completionUpdate: Bool)->())
 {
 //    let lastWeekDate = Date()
 //    let dateFormatter = DateFormatter()
@@ -111,9 +111,15 @@ func getSales(userKod:String,completion: @escaping (_ Authorization: Bool)->())
         
         do
         {
-            let userDataresponseStruct = try JSONDecoder().decode(SalesResponse.self, from: Data(jsonGetSales.utf8))
-            print("resT = ")
-//            completion(true,userDataresponseStruct.Position)
+            let userSalesData = try JSONDecoder().decode(SalesResponse.self, from: Data(jsonGetSales.utf8))
+            ConstantsSession.arraySellingData.removeAll()
+            
+            let SellingDataReport = Sales(nameInit: "Звіти", amountInit: userSalesData.documentReport)
+            let SellingDataCheck = Sales(nameInit: "Чеки", amountInit: userSalesData.documentCheck)
+            ConstantsSession.arraySellingData.append(SellingDataReport)
+            ConstantsSession.arraySellingData.append(SellingDataCheck)
+           
+            completion(true)
         }
         catch{
             completion(false)
@@ -122,3 +128,16 @@ func getSales(userKod:String,completion: @escaping (_ Authorization: Bool)->())
     task.resume()
 }
 
+
+func relodeArray(indexmenu:Int,completion: @escaping (_ Authorization: Bool)->()) {
+    
+    if (indexmenu == 0){
+        getSales(userKod: ConstantsSession.idUserSession) { (completionUpdate) in
+            completion(true)
+        }
+    }else if (indexmenu == 1){
+        
+    }else if (indexmenu == 2){
+        
+    }
+}

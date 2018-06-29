@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jcY-m4-4VG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jcY-m4-4VG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -80,20 +80,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tw1-Nb-Ug9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyC-rL-0Fe">
-                                                    <rect key="frame" x="0.0" y="41" width="375" height="31"/>
+                                                    <rect key="frame" x="0.0" y="50.5" width="375" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnz-sZ-B8u">
-                                                    <rect key="frame" x="15" y="20.5" width="345" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="15" y="26.5" width="345" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -195,13 +195,13 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="170" id="SSS-SB-u1u"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22m-sy-0cf">
                                                     <rect key="frame" x="185" y="5" width="190" height="81.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -228,7 +228,7 @@
                                     <outletCollection property="gestureRecognizers" destination="KaM-q3-MqQ" appends="YES" id="kzx-55-oK5"/>
                                 </connections>
                             </tableView>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5f-H4-Wlj" customClass="ViewMenu" customModule="zhukapp">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5f-H4-Wlj" customClass="ViewMenu" customModule="zhukapp">
                                 <rect key="frame" x="0.0" y="0.0" width="200" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i52-zT-pFL">
@@ -471,6 +471,15 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kDd-NC-Weo">
+                                <rect key="frame" x="162.5" y="318.5" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3Oc-zB-85N"/>
+                                    <constraint firstAttribute="width" constant="50" id="kKC-Tw-Aut"/>
+                                </constraints>
+                                <color key="color" red="0.43137254899999999" green="0.1176470588" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.43137254901960786" green="0.12156862745098039" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -478,6 +487,7 @@
                             <constraint firstItem="NBS-Pn-buD" firstAttribute="trailing" secondItem="UAn-tx-oTC" secondAttribute="trailing" constant="75" id="1cJ-iQ-8wp"/>
                             <constraint firstItem="vVI-SP-d6Y" firstAttribute="top" secondItem="UAn-tx-oTC" secondAttribute="bottom" constant="80" id="2rB-zZ-1yx"/>
                             <constraint firstItem="vVI-SP-d6Y" firstAttribute="leading" secondItem="NBS-Pn-buD" secondAttribute="leading" constant="60" id="48u-yL-IXL"/>
+                            <constraint firstItem="kDd-NC-Weo" firstAttribute="centerX" secondItem="NBS-Pn-buD" secondAttribute="centerX" id="6ZM-2Z-85C"/>
                             <constraint firstItem="UAn-tx-oTC" firstAttribute="leading" secondItem="NBS-Pn-buD" secondAttribute="leading" constant="75" id="FTP-30-QGd"/>
                             <constraint firstAttribute="trailing" secondItem="vVI-SP-d6Y" secondAttribute="trailing" constant="60" id="FYA-fB-4K6"/>
                             <constraint firstItem="JJE-B3-2Ez" firstAttribute="leading" secondItem="NBS-Pn-buD" secondAttribute="leading" constant="60" id="IrD-b0-UYB"/>
@@ -487,11 +497,13 @@
                             <constraint firstItem="UAn-tx-oTC" firstAttribute="top" secondItem="kF5-bg-M6z" secondAttribute="bottom" constant="100" id="XeQ-yn-fAx"/>
                             <constraint firstItem="NBS-Pn-buD" firstAttribute="trailing" secondItem="aKQ-f7-iVy" secondAttribute="trailing" constant="60" id="bRE-Yq-Fgb"/>
                             <constraint firstItem="aKQ-f7-iVy" firstAttribute="top" secondItem="vVI-SP-d6Y" secondAttribute="bottom" constant="15" id="dbk-lT-Fl6"/>
+                            <constraint firstItem="kDd-NC-Weo" firstAttribute="centerY" secondItem="NBS-Pn-buD" secondAttribute="centerY" id="gy8-y6-q3f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NBS-Pn-buD"/>
                     </view>
                     <navigationItem key="navigationItem" title="Zhuk admin" id="Hxz-BF-Wot"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="kDd-NC-Weo" id="8bU-BH-aWD"/>
                         <outlet property="loginText" destination="vVI-SP-d6Y" id="a2l-MR-fVz"/>
                         <outlet property="passwordText" destination="aKQ-f7-iVy" id="wIy-86-JAC"/>
                         <outlet property="singinButton" destination="JJE-B3-2Ez" id="EGP-Hf-5gH"/>

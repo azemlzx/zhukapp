@@ -13,7 +13,7 @@ class Sales: NSObject {
     let name : String?
     let amount : String?
     
-    init(nameInit:String?,amountInit:String?) {
+    init(nameInit:String,amountInit:String) {
         self.name = nameInit
         self.amount = amountInit
     }

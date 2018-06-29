@@ -8,11 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var singinButton: UIButton!
     @IBOutlet weak var loginText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,22 +28,36 @@ class ViewController: UIViewController {
         singinButton.layer.cornerRadius = 15
         singinButton.layer.borderWidth = 3
         singinButton.layer.borderColor = UIColor.white.cgColor
+        
         // login textfild
         loginText.layer.cornerRadius = 12
         loginText.layer.masksToBounds = true
         let attributedPlaceholderLogin = NSAttributedString(string: "Логін", attributes: [NSAttributedStringKey.paragraphStyle: centeredParagraphStyle])
         loginText.attributedPlaceholder = attributedPlaceholderLogin
         loginText.textAlignment = NSTextAlignment.center
+        loginText.delegate = self
         // password textfild
          let attributedPlaceholderPassword = NSAttributedString(string: "Пароль", attributes: [NSAttributedStringKey.paragraphStyle: centeredParagraphStyle])
         passwordText.layer.cornerRadius = 12
         passwordText.layer.masksToBounds = true
         passwordText.attributedPlaceholder = attributedPlaceholderPassword
         passwordText.textAlignment = NSTextAlignment.center
+        passwordText.delegate = self
+        // indicator
+        activityIndicator.isHidden = true
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func HandlerLogin(alert: UIAlertAction!) {
@@ -73,6 +90,8 @@ class ViewController: UIViewController {
             return
         }
         
+        activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
         
         authorization(User: login, Password: password, completion: {
             Authorization,UserKod,idSession in
@@ -81,11 +100,15 @@ class ViewController: UIViewController {
                 ConstantsSession.nameUserSession = login
                 ConstantsSession.idSession = idSession!
                 ConstantsSession.idUserSession = UserKod!
-                DispatchQueue.main.async(execute: {
-                    self.HandlerLogPass(alert: "")
-                    let Storybord = UIStoryboard(name: "Main", bundle: nil)
-                    let myVCTouch = Storybord.instantiateViewController(withIdentifier: "tableVC")
-                    self.present(myVCTouch, animated: true, completion:nil)
+                getSales(userKod: ConstantsSession.idUserSession, completion: { (completionUpdate) in
+                    DispatchQueue.main.async(execute: {
+                        self.activityIndicator.isHidden = true
+                        self.activityIndicator.stopAnimating()
+                        self.HandlerLogPass(alert: "")
+                        let Storybord = UIStoryboard(name: "Main", bundle: nil)
+                        let myVCTouch = Storybord.instantiateViewController(withIdentifier: "tableVC")
+                        self.present(myVCTouch, animated: true, completion:nil)
+                    })
                 })
             }else{
                 DispatchQueue.main.async(execute: {

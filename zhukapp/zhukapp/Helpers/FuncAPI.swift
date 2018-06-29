@@ -19,19 +19,3 @@ func encodingJSONServer(aString:String) -> String {
     return strEncoded
 }
 
-func downloadData() {
-    getSales(userKod: ConstantsSession.idUserSession, completion:
-        {Authorization in
-            
-            if (Authorization){
-                
-            }
-            
-            
-    })
-            
-            
-    
-    
-    
-}

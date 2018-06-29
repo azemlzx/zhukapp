@@ -23,6 +23,6 @@ struct UserDataResponse : Codable {
 }
 
 struct SalesResponse : Codable {
-    let documentReport: String?
+    let documentReport: String
     let documentCheck: String
 }

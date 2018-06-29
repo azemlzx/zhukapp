@@ -43,8 +43,6 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         openMenu("")
         
-        downloadData()
-        
         tableViewMenu.tableFooterView = UIView.init(frame: CGRect.zero)
         imageViev.image = UIImage(named:"no-photo avatar")
         
@@ -68,14 +66,11 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         var countS : Int = 0
         
         if (tableView == tableViewFirst && indexmenu == 0){
-            relodeArray(indexmenu:indexmenu)
-            countS = ItemsSelling.count
-//        }else if(tableView == tableViewFirst && indexmenu == 1){
-//            relodeArray(indexmenu:indexmenu)
-//            countS = ItemsOrder.count
-//        }else if(tableView == tableViewFirst && indexmenu == 2){
-//            relodeArray(indexmenu:indexmenu)
-//            countS = ItemsCoordination.count
+            countS = ConstantsSession.arraySellingData.count
+        }else if(tableView == tableViewFirst && indexmenu == 1){
+            countS = 0
+        }else if(tableView == tableViewFirst && indexmenu == 2){
+            countS = 0
         }else if(tableView == tableViewMenu){
             countS = 3
         }
@@ -92,23 +87,19 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
            return UITableViewCell()
         }
     }
-    public func tableView(_ tableView:UITableView, editActionsForRowAt indexPath: IndexPath) -> [ UITableViewRowAction]? {
-        
-        let delete = UITableViewRowAction(style: .normal, title:"Delete")
-        { (action, indexPath)  in
-            self.deleteforArray(indextab : indexPath.row)
-            self.tableViewFirst.deleteRows(at: [indexPath] , with: .fade)
-        }
-        delete.backgroundColor = .red
-        
-        return [delete]
-        
-        
-    }
-    
-
-    
-    
+//    public func tableView(_ tableView:UITableView, editActionsForRowAt indexPath: IndexPath) -> [ UITableViewRowAction]? {
+//
+//        let delete = UITableViewRowAction(style: .normal, title:"Delete")
+//        { (action, indexPath)  in
+//            self.deleteforArray(indextab : indexPath.row)
+//            self.tableViewFirst.deleteRows(at: [indexPath] , with: .fade)
+//        }
+//        delete.backgroundColor = .red
+//
+//        return [delete]
+//
+//
+//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (tableView == tableViewFirst){
@@ -119,6 +110,7 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
             self.title = casestr(indextab: indexmenu)
             self.menubar.title = casestr(indextab: indexmenu)
         }else if (tableView == tableViewMenu){
+            tableViewFirst.reloadData()
             indexmenu = indexPath.row
             tableViewMenu.deselectRow(at: indexPath, animated : true)
             self.title = casestr(indextab: indexmenu)
@@ -126,11 +118,14 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
             if (menuSwowing){
                 openMenu("")
             }
-            
+            relodeArray(indexmenu: indexmenu) { (completionUpdate) in
+                DispatchQueue.main.async(execute: {
+                    self.tableViewFirst.reloadData()
+                })
+            }
         }
     }
     
-
     @IBAction func LogOut(_ sender: UIButton) {
         
         self.dismiss(animated: true, completion: nil)
@@ -141,36 +136,7 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         self.tableViewFirst.reloadData()
     }
     
-    func relodeArray(indexmenu:Int) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        if (indexmenu == 0){
-            let fetchRequest: NSFetchRequest<Selling> = Selling.fetchRequest()
-            
-            do {
-                ItemsSelling = try context.fetch(fetchRequest)
-            } catch {
-                print(error.localizedDescription)
-            }
-        }else if (indexmenu == 1){
-            let fetchRequest: NSFetchRequest<Order> = Order.fetchRequest()
-            
-            do {
-                ItemsOrder = try context.fetch(fetchRequest)
-            } catch {
-                print(error.localizedDescription)
-            }
-        }else if (indexmenu == 2){
-            let fetchRequest: NSFetchRequest<Coordination> = Coordination.fetchRequest()
-            
-            do {
-                ItemsCoordination = try context.fetch(fetchRequest)
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-    }
+    
     @IBAction func openMenu(_ sender: Any) {
         if (menuSwowing){
             menuconst.constant = 0
