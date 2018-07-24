@@ -22,6 +22,7 @@ class ConstantsSession: NSObject {
     static var nameUserSession :String = ""
     static var positionUser :String = ""
     static var arraySellingData : [Sales] = [Sales]()
+    static var arrayReconciliationOfSales : [ReconciliationOfSales] = [ReconciliationOfSales]()
 //    static var arrayOrderData : [OrderData]?
 //    static var arrayCoordinationData : [CoordinationData]?
 }

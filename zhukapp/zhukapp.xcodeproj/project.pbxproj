@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A733539A3D807E5E14B7EAF /* Pods_zhukapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC6C2DE1E223515C316BDD7 /* Pods_zhukapp.framework */; };
 		FF03830B1F8A4CA900A21E7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF03830A1F8A4CA900A21E7D /* AppDelegate.swift */; };
 		FF03830D1F8A4CA900A21E7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF03830C1F8A4CA900A21E7D /* ViewController.swift */; };
 		FF0383101F8A4CA900A21E7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF03830E1F8A4CA900A21E7D /* Main.storyboard */; };
@@ -18,9 +19,11 @@
 		FF0383271F8A4EE200A21E7D /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0383261F8A4EE200A21E7D /* MenuCell.swift */; };
 		FF0383291F8A504C00A21E7D /* ViewControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0383281F8A504C00A21E7D /* ViewControllerTable.swift */; };
 		FF1EB03A20E3428B00255B35 /* Sales.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1EB03920E3428B00255B35 /* Sales.swift */; };
+		FF21581520E7EF8800D9EDAF /* ReconciliationOfSalesJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21581420E7EF8800D9EDAF /* ReconciliationOfSalesJSON.swift */; };
 		FF47BA3D202747EA00D92402 /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF47BA3C202747EA00D92402 /* DesignableUITextField.swift */; };
 		FF5B41421F9519AE0010BCDD /* CellAccept.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B41411F9519AE0010BCDD /* CellAccept.swift */; };
 		FF68D1EC2091183200D9B732 /* ViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF68D1EB2091183200D9B732 /* ViewMenu.swift */; };
+		FF8C8E6D2106699600C9A95C /* ReconciliationOfSales.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8C8E6C2106699600C9A95C /* ReconciliationOfSales.swift */; };
 		FF949F2320A0E7270048A1DA /* CellSalesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF949F2220A0E7270048A1DA /* CellSalesView.swift */; };
 		FF9BCFD21F8BFFC0005EDB92 /* ViewControllerAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */; };
 		FFE4E4621F8EB649004DA79D /* CellManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4E4611F8EB649004DA79D /* CellManeger.swift */; };
@@ -32,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D0EF8BFEDDDDC8B3FCA73CD /* Pods-zhukapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zhukapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-zhukapp/Pods-zhukapp.release.xcconfig"; sourceTree = "<group>"; };
+		901254003BAE2D0C5BDC13C9 /* Pods-zhukapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zhukapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zhukapp/Pods-zhukapp.debug.xcconfig"; sourceTree = "<group>"; };
+		9EC6C2DE1E223515C316BDD7 /* Pods_zhukapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zhukapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF0383071F8A4CA900A21E7D /* zhukapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zhukapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF03830A1F8A4CA900A21E7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF03830C1F8A4CA900A21E7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,9 +51,11 @@
 		FF0383261F8A4EE200A21E7D /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		FF0383281F8A504C00A21E7D /* ViewControllerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTable.swift; sourceTree = "<group>"; };
 		FF1EB03920E3428B00255B35 /* Sales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sales.swift; sourceTree = "<group>"; };
+		FF21581420E7EF8800D9EDAF /* ReconciliationOfSalesJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReconciliationOfSalesJSON.swift; sourceTree = "<group>"; };
 		FF47BA3C202747EA00D92402 /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		FF5B41411F9519AE0010BCDD /* CellAccept.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAccept.swift; sourceTree = "<group>"; };
 		FF68D1EB2091183200D9B732 /* ViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMenu.swift; sourceTree = "<group>"; };
+		FF8C8E6C2106699600C9A95C /* ReconciliationOfSales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReconciliationOfSales.swift; sourceTree = "<group>"; };
 		FF949F2220A0E7270048A1DA /* CellSalesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSalesView.swift; sourceTree = "<group>"; };
 		FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAdd.swift; sourceTree = "<group>"; };
 		FFE4E4611F8EB649004DA79D /* CellManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellManeger.swift; sourceTree = "<group>"; };
@@ -63,17 +71,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A733539A3D807E5E14B7EAF /* Pods_zhukapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D654E37FD370A183CB6A918 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9EC6C2DE1E223515C316BDD7 /* Pods_zhukapp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		98F8F0E0B74FA6A67B1F0EA1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				901254003BAE2D0C5BDC13C9 /* Pods-zhukapp.debug.xcconfig */,
+				2D0EF8BFEDDDDC8B3FCA73CD /* Pods-zhukapp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FF0382FE1F8A4CA900A21E7D = {
 			isa = PBXGroup;
 			children = (
 				FF0383091F8A4CA900A21E7D /* zhukapp */,
 				FF0383081F8A4CA900A21E7D /* Products */,
+				98F8F0E0B74FA6A67B1F0EA1 /* Pods */,
+				0D654E37FD370A183CB6A918 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				FFF45234209FA68A00B7BEE4 /* Helpers */,
-				FF68D1ED2091243D00D9B732 /* Controller */,
 				FFF01C08202BAB3100BF070A /* Manager */,
 				FFF01C07202BAAD600BF070A /* ManagerUI */,
 				FF0383211F8A4E8400A21E7D /* Model */,
@@ -107,21 +134,17 @@
 		FF0383211F8A4E8400A21E7D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FF1EB03920E3428B00255B35 /* Sales.swift */,
 				FF0383241F8A4EBC00A21E7D /* TableViewCell.swift */,
 				FF0383261F8A4EE200A21E7D /* MenuCell.swift */,
 				FF5B41411F9519AE0010BCDD /* CellAccept.swift */,
 				FF47BA3C202747EA00D92402 /* DesignableUITextField.swift */,
 				FFF4522E209FA4CF00B7BEE4 /* StructJson.swift */,
 				FF949F2220A0E7270048A1DA /* CellSalesView.swift */,
+				FF21581420E7EF8800D9EDAF /* ReconciliationOfSalesJSON.swift */,
+				FF8C8E6C2106699600C9A95C /* ReconciliationOfSales.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		FF68D1ED2091243D00D9B732 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		FFF01C07202BAAD600BF070A /* ManagerUI */ = {
@@ -150,7 +173,6 @@
 			children = (
 				FFF45232209FA67F00B7BEE4 /* Constants.swift */,
 				FFF45235209FA75B00B7BEE4 /* FuncAPI.swift */,
-				FF1EB03920E3428B00255B35 /* Sales.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -162,9 +184,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF03831C1F8A4CA900A21E7D /* Build configuration list for PBXNativeTarget "zhukapp" */;
 			buildPhases = (
+				7C7E82552F041DD710FD1437 /* [CP] Check Pods Manifest.lock */,
 				FF0383031F8A4CA900A21E7D /* Sources */,
 				FF0383041F8A4CA900A21E7D /* Frameworks */,
 				FF0383051F8A4CA900A21E7D /* Resources */,
+				65D41DE4A644DE48A7B5CBF3 /* [CP] Embed Pods Frameworks */,
+				1D87FA56869B3BF4B7D5DE80 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -222,6 +247,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1D87FA56869B3BF4B7D5DE80 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-zhukapp/Pods-zhukapp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65D41DE4A644DE48A7B5CBF3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-zhukapp/Pods-zhukapp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-zhukapp/Pods-zhukapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C7E82552F041DD710FD1437 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-zhukapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FF0383031F8A4CA900A21E7D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -229,6 +308,7 @@
 			files = (
 				FFF45233209FA67F00B7BEE4 /* Constants.swift in Sources */,
 				FF0383271F8A4EE200A21E7D /* MenuCell.swift in Sources */,
+				FF21581520E7EF8800D9EDAF /* ReconciliationOfSalesJSON.swift in Sources */,
 				FF5B41421F9519AE0010BCDD /* CellAccept.swift in Sources */,
 				FF0383201F8A4DEC00A21E7D /* UpdateMenu.swift in Sources */,
 				FFF45236209FA75B00B7BEE4 /* FuncAPI.swift in Sources */,
@@ -243,6 +323,7 @@
 				FFF4522F209FA4CF00B7BEE4 /* StructJson.swift in Sources */,
 				FF0383251F8A4EBC00A21E7D /* TableViewCell.swift in Sources */,
 				FF03830B1F8A4CA900A21E7D /* AppDelegate.swift in Sources */,
+				FF8C8E6D2106699600C9A95C /* ReconciliationOfSales.swift in Sources */,
 				FF9BCFD21F8BFFC0005EDB92 /* ViewControllerAdd.swift in Sources */,
 				FFE4E4621F8EB649004DA79D /* CellManeger.swift in Sources */,
 				FF0383131F8A4CA900A21E7D /* zhukapp.xcdatamodeld in Sources */,
@@ -380,12 +461,13 @@
 		};
 		FF03831D1F8A4CA900A21E7D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 901254003BAE2D0C5BDC13C9 /* Pods-zhukapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8BAW4LPMZC;
 				INFOPLIST_FILE = zhukapp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = home.zhukapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -396,12 +478,13 @@
 		};
 		FF03831E1F8A4CA900A21E7D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D0EF8BFEDDDDC8B3FCA73CD /* Pods-zhukapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8BAW4LPMZC;
 				INFOPLIST_FILE = zhukapp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = home.zhukapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

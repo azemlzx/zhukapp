@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 
 func authorization(User:String,Password:String,completion: @escaping (_ Authorization: Bool,_ UserKod: String?,_ idSession: String?)->())
@@ -27,6 +28,7 @@ func authorization(User:String,Password:String,completion: @escaping (_ Authoriz
     let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
         guard let datajson = data, error == nil else {
             print("error=\(String(describing: error))")
+            completion(false, nil,nil)
             return
         }
         
@@ -128,6 +130,44 @@ func getSales(userKod:String,completion: @escaping (_ completionUpdate: Bool)->(
     task.resume()
 }
 
+func getReconciliationOfSales(userKod:String,completion: @escaping (_ completionUpdate: Bool)->())
+{
+    
+    let urlString = Constants.ApiUrl + "?nameMetod=ReconciliationOfSales"
+    let url = URL(string: urlString)!
+    
+    var request = URLRequest(url: url as URL)
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.setValue(userKod, forHTTPHeaderField: "userKod")
+    request.httpMethod = "GET"
+    let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        guard let datajson = data, error == nil else {
+            print("error=\(String(describing: error))")
+            return
+        }
+        
+        var jsonReconciliationOfSales = String(data: datajson, encoding: String.Encoding.utf8)!
+        jsonReconciliationOfSales = encodingJSONServer(aString:jsonReconciliationOfSales)
+        
+        do
+        {
+            let userSalesData = try JSONDecoder().decode(ObjectsArray.self, from: Data(jsonReconciliationOfSales.utf8))
+            ConstantsSession.arrayReconciliationOfSales.removeAll()
+            for item in userSalesData.data {
+                
+                let subObject = SubObjectReconciliationOfSales(NameP: item.Object.Name, AmountP: item.Object.Amount, PriceP: item.Object.Price, AmountFullP: item.Object.AmountFull, DiscountAmount: item.Object.AmountFull)
+                let objectData = ReconciliationOfSales(NomerP: item.Nomer, DataP: item.Data, InitiatorP: item.Initiator, СommentP: item.Сomment, ObjectP: subObject)
+                ConstantsSession.arrayReconciliationOfSales.append(objectData)
+                
+            }
+            completion(true)
+        }
+        catch{
+            completion(false)
+        }
+    }
+    task.resume()
+}
 
 func relodeArray(indexmenu:Int,completion: @escaping (_ Authorization: Bool)->()) {
     
@@ -136,7 +176,9 @@ func relodeArray(indexmenu:Int,completion: @escaping (_ Authorization: Bool)->()
             completion(true)
         }
     }else if (indexmenu == 1){
-        
+        getReconciliationOfSales(userKod: ConstantsSession.idUserSession) { (completionUpdate) in
+            completion(true)
+        }
     }else if (indexmenu == 2){
         
     }

@@ -112,6 +112,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 })
             }else{
                 DispatchQueue.main.async(execute: {
+                    self.activityIndicator.isHidden = true
+                    self.activityIndicator.stopAnimating()
                     let ac = UIAlertController(title: "Error", message: "Помилка логіна або пароля", preferredStyle: UIAlertControllerStyle.alert)
                     let acAction = UIAlertAction(title: "OK", style: .default , handler: self.HandlerLogPass)
                     ac.addAction(acAction)

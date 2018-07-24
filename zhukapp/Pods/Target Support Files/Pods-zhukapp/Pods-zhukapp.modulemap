@@ -1,0 +1,6 @@
+framework module Pods_zhukapp {
+  umbrella header "Pods-zhukapp-umbrella.h"
+
+  export *
+  module * { export * }
+}

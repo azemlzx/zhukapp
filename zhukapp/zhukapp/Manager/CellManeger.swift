@@ -11,10 +11,10 @@ import UIKit
 import CoreData
 
 func navigator(indexM: Int, indexrow:Int, tableView: UITableView) -> UITableViewCell {
-    if (indexM == 0){
+    if (indexM == 0 && ConstantsSession.arraySellingData.count > 0 ){
         return cellSales(indexrow: indexrow ,tableView: tableView)
-    }else if (indexM == 1){
-        return cellOrder(indexcellrow: indexrow,tableView: tableView)
+    }else if (indexM == 1 && ConstantsSession.arrayReconciliationOfSales.count > 0 ){
+        return cellReconciliationOfSales(indexrow: indexrow,tableView: tableView)
     }else if (indexM == 2){
         return cellCoordination(indexcellrow: indexrow,tableView: tableView)
     }
@@ -35,69 +35,31 @@ func cellSales(indexrow:Int, tableView: UITableView) -> UITableViewCell {
         return UITableViewCell()
     }
     
-    let stSellingData = ConstantsSession.arraySellingData[indexrow]
+    let tapeSellingData = ConstantsSession.arraySellingData[indexrow]
 
-    cell.document.text = stSellingData.name
-    cell.amount.text = stSellingData.amount
+    cell.document.text = tapeSellingData.name
+    cell.amount.text = tapeSellingData.amount
 
     return cell
 }
 
-func cellOrder(indexcellrow: Int,tableView: UITableView)-> UITableViewCell{
+func cellReconciliationOfSales(indexrow: Int,tableView: UITableView)-> UITableViewCell{
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellAccept") as? CellAccept else {
+        return UITableViewCell()
+    }
     
-//    guard (tableView.dequeueReusableCell(withIdentifier: "Cell") as? TableViewCell) != nil else {
-//        return UITableViewCell()
-//    }
-//    var ItemsOrder: [Order] = []
-//
-//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//    let context = appDelegate.persistentContainer.viewContext
-//
-//    let fetchRequest: NSFetchRequest<Order> = Order.fetchRequest()
-//
-//    do {
-//        ItemsOrder = try context.fetch(fetchRequest)
-//    } catch {
-//        print(error.localizedDescription)
-//    }
-//
-//    if(ItemsOrder[indexcellrow].status == 0){
-//
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellAccept") as? CellAccept else {
-//            return UITableViewCell()
-//        }
-//
-//        cell.toplabel.text = ItemsOrder[indexcellrow].title
-//        cell.textlabel.text = ItemsOrder[indexcellrow].textstr! +  "\n" + "\(ItemsOrder[indexcellrow].sum)"
-//
-//        cell.handlerActionButtonTapCompletion = { (_ Accept) in
-//            updataData (Items : ItemsOrder, indexitems : indexcellrow ,stauscell : Accept , tableViewT : tableView)
-//        }
-//
-//        return cell
-//    }else{
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? TableViewCell else {
-//            return UITableViewCell()
-//        }
-//
-//        cell.toplabel.text = ItemsOrder[indexcellrow].title
-//        cell.textlabel.text = ItemsOrder[indexcellrow].textstr
-//        cell.bottomlabel.text = "\(ItemsOrder[indexcellrow].sum)"
-//        if (ItemsOrder[indexcellrow].status == 1){
-//            cell.bottomlabel.textColor = UIColor.green
-//        }else {
-//            cell.bottomlabel.textColor = UIColor.red
-//        }
-//
-//        return cell
-//    }
-    return UITableViewCell()
+    let tapeReconciliationOfSales = ConstantsSession.arrayReconciliationOfSales[indexrow]
+
+    cell.toplabel.text = " №\(tapeReconciliationOfSales.Nomer) від \(tapeReconciliationOfSales.Data)"
+    cell.textlabel.text = "  Сумма - \(tapeReconciliationOfSales.Object.AmountFull) \n \(tapeReconciliationOfSales.Сomment)"
+
+    return cell
     
 }
 
 func cellCoordination(indexcellrow: Int,tableView: UITableView)-> UITableViewCell{
     
-    var ItemsCoordination: [Coordination] = []
+//    var ItemsCoordination: [Coordination] = []
 //
 //    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //    let context = appDelegate.persistentContainer.viewContext

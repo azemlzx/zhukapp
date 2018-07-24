@@ -16,6 +16,7 @@ func encodingJSONServer(aString:String) -> String {
     strEncoded = strEncoded.replacingOccurrences(of:"t\\", with: "")
     strEncoded.removeFirst()
     strEncoded.removeLast()
+
     return strEncoded
 }
 
