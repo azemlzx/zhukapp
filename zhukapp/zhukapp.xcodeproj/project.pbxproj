@@ -26,6 +26,8 @@
 		FF8C8E6D2106699600C9A95C /* ReconciliationOfSales.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8C8E6C2106699600C9A95C /* ReconciliationOfSales.swift */; };
 		FF949F2320A0E7270048A1DA /* CellSalesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF949F2220A0E7270048A1DA /* CellSalesView.swift */; };
 		FF9BCFD21F8BFFC0005EDB92 /* ViewControllerAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */; };
+		FFE18687210DBF3400510B4B /* RequstestForMoneySharingJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE18686210DBF3400510B4B /* RequstestForMoneySharingJSON.swift */; };
+		FFE18689210DC25A00510B4B /* RequstestForMoneySharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE18688210DC25A00510B4B /* RequstestForMoneySharing.swift */; };
 		FFE4E4621F8EB649004DA79D /* CellManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4E4611F8EB649004DA79D /* CellManeger.swift */; };
 		FFE4E4661F8EC5C0004DA79D /* protocolapp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4E4651F8EC5C0004DA79D /* protocolapp.swift */; };
 		FFF4522F209FA4CF00B7BEE4 /* StructJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF4522E209FA4CF00B7BEE4 /* StructJson.swift */; };
@@ -58,6 +60,8 @@
 		FF8C8E6C2106699600C9A95C /* ReconciliationOfSales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReconciliationOfSales.swift; sourceTree = "<group>"; };
 		FF949F2220A0E7270048A1DA /* CellSalesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSalesView.swift; sourceTree = "<group>"; };
 		FF9BCFD11F8BFFC0005EDB92 /* ViewControllerAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAdd.swift; sourceTree = "<group>"; };
+		FFE18686210DBF3400510B4B /* RequstestForMoneySharingJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequstestForMoneySharingJSON.swift; sourceTree = "<group>"; };
+		FFE18688210DC25A00510B4B /* RequstestForMoneySharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequstestForMoneySharing.swift; sourceTree = "<group>"; };
 		FFE4E4611F8EB649004DA79D /* CellManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellManeger.swift; sourceTree = "<group>"; };
 		FFE4E4651F8EC5C0004DA79D /* protocolapp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocolapp.swift; sourceTree = "<group>"; };
 		FFF4522E209FA4CF00B7BEE4 /* StructJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructJson.swift; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 				FF949F2220A0E7270048A1DA /* CellSalesView.swift */,
 				FF21581420E7EF8800D9EDAF /* ReconciliationOfSalesJSON.swift */,
 				FF8C8E6C2106699600C9A95C /* ReconciliationOfSales.swift */,
+				FFE18686210DBF3400510B4B /* RequstestForMoneySharingJSON.swift */,
+				FFE18688210DC25A00510B4B /* RequstestForMoneySharing.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,8 +316,10 @@
 				FF0383271F8A4EE200A21E7D /* MenuCell.swift in Sources */,
 				FF21581520E7EF8800D9EDAF /* ReconciliationOfSalesJSON.swift in Sources */,
 				FF5B41421F9519AE0010BCDD /* CellAccept.swift in Sources */,
+				FFE18687210DBF3400510B4B /* RequstestForMoneySharingJSON.swift in Sources */,
 				FF0383201F8A4DEC00A21E7D /* UpdateMenu.swift in Sources */,
 				FFF45236209FA75B00B7BEE4 /* FuncAPI.swift in Sources */,
+				FFE18689210DC25A00510B4B /* RequstestForMoneySharing.swift in Sources */,
 				FFF45231209FA5F800B7BEE4 /* APIManeger.swift in Sources */,
 				FF47BA3D202747EA00D92402 /* DesignableUITextField.swift in Sources */,
 				FFE4E4661F8EC5C0004DA79D /* protocolapp.swift in Sources */,

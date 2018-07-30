@@ -8,19 +8,19 @@
 
 import UIKit
 
-struct ObjectsArray: Codable {
-    let data: [ObjectData]
+struct ObjectsReconciliationOfSales: Codable {
+    let data: [ObjectDataReconciliationOfSales]
 }
 
-struct ObjectData: Codable {
+struct ObjectDataReconciliationOfSales: Codable {
     let Nomer: String
     let Data: String
     let Initiator: String
     let Сomment: String
-    let Object: SubObject
+    let Object: SubObjectSale
 }
 
-struct SubObject: Codable {
+struct SubObjectSale: Codable {
     let Name: String
     let Amount: Int
     let Price: Float

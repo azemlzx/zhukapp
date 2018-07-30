@@ -68,9 +68,9 @@ class ViewControllerTable: UIViewController,UITableViewDelegate, UITableViewData
         if (tableView == tableViewFirst && indexmenu == 0){
             countS = ConstantsSession.arraySellingData.count
         }else if(tableView == tableViewFirst && indexmenu == 1){
-            countS = ConstantsSession.arrayReconciliationOfSales.count
+            countS = ConstantsSession.arrayRequstestForMoneySharing.count
         }else if(tableView == tableViewFirst && indexmenu == 2){
-            countS = 0
+            countS = ConstantsSession.arrayReconciliationOfSales.count
         }else if(tableView == tableViewMenu){
             countS = 3
         }

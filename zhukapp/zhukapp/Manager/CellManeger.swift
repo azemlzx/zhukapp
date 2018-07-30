@@ -8,15 +8,14 @@
 
 import Foundation
 import UIKit
-import CoreData
 
 func navigator(indexM: Int, indexrow:Int, tableView: UITableView) -> UITableViewCell {
     if (indexM == 0 && ConstantsSession.arraySellingData.count > 0 ){
         return cellSales(indexrow: indexrow ,tableView: tableView)
-    }else if (indexM == 1 && ConstantsSession.arrayReconciliationOfSales.count > 0 ){
+    }else if (indexM == 1 && ConstantsSession.arrayRequstestForMoneySharing.count > 0 ){
+        return cellCoordination(indexrow: indexrow,tableView: tableView)
+    }else if (indexM == 2 && ConstantsSession.arrayReconciliationOfSales.count > 0 ){
         return cellReconciliationOfSales(indexrow: indexrow,tableView: tableView)
-    }else if (indexM == 2){
-        return cellCoordination(indexcellrow: indexrow,tableView: tableView)
     }
     return UITableViewCell()
 }
@@ -57,64 +56,17 @@ func cellReconciliationOfSales(indexrow: Int,tableView: UITableView)-> UITableVi
     
 }
 
-func cellCoordination(indexcellrow: Int,tableView: UITableView)-> UITableViewCell{
+func cellCoordination(indexrow: Int,tableView: UITableView)-> UITableViewCell{
     
-//    var ItemsCoordination: [Coordination] = []
-//
-//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//    let context = appDelegate.persistentContainer.viewContext
-//    let fetchRequest: NSFetchRequest<Coordination> = Coordination.fetchRequest()
-//    do {
-//        ItemsCoordination = try context.fetch(fetchRequest)
-//    } catch {
-//        print(error.localizedDescription)
-//    }
-//
-//    if(ItemsCoordination[indexcellrow].status == 0){
-//
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellAccept") as? CellAccept else {
-//            return UITableViewCell()
-//        }
-//
-//        cell.toplabel.text = ItemsCoordination[indexcellrow].title
-//        cell.textlabel.text = ItemsCoordination[indexcellrow].textstr! +  "\n" + "\(ItemsCoordination[indexcellrow].sum)"
-//
-//        cell.handlerActionButtonTapCompletion = { (_ Accept) in
-//            updataData (Items : ItemsCoordination, indexitems : indexcellrow , stauscell : Accept , tableViewT : tableView)
-//        }
-//        return cell
-//    }else{
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? TableViewCell else {
-//            return UITableViewCell()
-//        }
-//
-//        cell.toplabel.text = ItemsCoordination[indexcellrow].title
-//        cell.textlabel.text = ItemsCoordination[indexcellrow].textstr
-//        cell.bottomlabel.text = "\(ItemsCoordination[indexcellrow].sum)"
-//        if (ItemsCoordination[indexcellrow].status == 1){
-//            cell.bottomlabel.textColor = UIColor.green
-//        }else {
-//            cell.bottomlabel.textColor = UIColor.red
-//        }
-//
-//        return cell
-//    }
-//
-    return UITableViewCell()
-}
 
-func updataData (Items : [Any] , indexitems : Int, stauscell : Int , tableViewT: UITableView){
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CellAccept") as? CellAccept else {
+            return UITableViewCell()
+        }
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    let context = appDelegate.persistentContainer.viewContext
+        let tapeRequstestForMoneySharing = ConstantsSession.arrayRequstestForMoneySharing[indexrow]
     
-    let strItmes = Items[indexitems]
-    
-    (strItmes as AnyObject).setValue(stauscell,forKey: "status")
-    do {
-        try (context as AnyObject).save()
-    } catch {
-        print(error.localizedDescription)
-    }
-    tableViewT.reloadData()
+        cell.toplabel.text = " №\(tapeRequstestForMoneySharing.Nomer) від \(tapeRequstestForMoneySharing.Data)"
+        cell.textlabel.text = "  Сумма - \(tapeRequstestForMoneySharing.DocumentAmount) \n \(tapeRequstestForMoneySharing.Сomment)"
+
+        return cell
 }
